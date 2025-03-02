@@ -1,0 +1,46 @@
+// Component styles
+
+button.mult_submit {
+  border: none;
+  background-color: transparent;
+}
+
+.condition {
+  border-color: $border-color !important;
+}
+
+th.condition {
+  border-width: 1px 1px 0 1px;
+  border-style: solid;
+}
+
+td.condition {
+  border-width: 0 1px 0 1px;
+  border-style: solid;
+}
+
+tr:last-child td.condition {
+  border-width: 0 1px 1px 1px;
+}
+
+.before-condition {
+  border-right: 1px solid $border-color;
+}
+
+.null {
+  font-style: italic;
+  color: $secondary-text-color !important;
+}
+
+img.lightbulb {
+  cursor: pointer;
+}
+
+.pdflayout {
+  overflow: hidden;
+  clip: inherit;
+  background-color: $background-color;
+  display: none;
+  border: 1px solid $border-color;
+  position: relative;
+}

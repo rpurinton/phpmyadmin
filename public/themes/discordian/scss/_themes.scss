@@ -1,0 +1,34 @@
+// Theme-specific styles
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $font-family;
+}
+
+a {
+  color: $accent-color;
+  text-decoration: $link-decoration;
+
+  &:hover {
+    text-decoration: $link-hover-decoration;
+    color: lighten($accent-color, 10%);
+  }
+}
+
+.navbar {
+  background-color: darken($background-color, 5%);
+  border-bottom: 1px solid $border-color;
+}
+
+.button {
+  background-color: $accent-color;
+  color: $text-color;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: lighten($accent-color, 10%);
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Discordian",
+    "version": "6.0",
+    "description": "Discordian custom theme for phpMyAdmin",
+    "author": "Russell Purinton",
+    "url": "https://www.phpmyadmin.net/",
+    "supports": ["6.0"],
+    "colorModes": ["dark"]
+}

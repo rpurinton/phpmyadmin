@@ -1,0 +1,43 @@
+// Layout styles
+
+#page_content {
+  margin: 0 0.5em;
+}
+
+.data {
+  margin: 0 0 12px;
+}
+
+#navbarDropdown > img {
+  display: none;
+}
+
+textarea {
+  &.char {
+    margin: 6px;
+  }
+
+  &.charField {
+    width: 95%;
+  }
+}
+
+.datatable {
+  table-layout: fixed;
+}
+
+.clearfloat {
+  clear: both;
+}
+
+.separator {
+  color: $text-color;
+  text-shadow: 0 1px 0 $border-color;
+}
+
+.null_div {
+  height: 20px;
+  text-align: center;
+  font-style: normal;
+  min-width: 50px;
+}

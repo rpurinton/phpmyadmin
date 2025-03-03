@@ -2,7 +2,11 @@
     "name": "phpmyadmin/phpmyadmin",
     "type": "project",
     "description": "A web interface for MySQL and MariaDB",
-    "keywords": ["phpmyadmin","mysql","web"],
+    "keywords": [
+        "phpmyadmin",
+        "mysql",
+        "web"
+    ],
     "homepage": "https://www.phpmyadmin.net/",
     "support": {
         "security": "https://www.phpmyadmin.net/security/",
@@ -20,7 +24,9 @@
             "homepage": "https://www.phpmyadmin.net/team/"
         }
     ],
-    "non-feature-branches": ["RELEASE_.*"],
+    "non-feature-branches": [
+        "RELEASE_.*"
+    ],
     "autoload": {
         "psr-4": {
             "PhpMyAdmin\\": "src"
@@ -56,28 +62,28 @@
         "ext-pcre": "*",
         "ext-sodium": "*",
         "ext-xml": "*",
-        "composer/ca-bundle": "^1.2",
-        "fig/http-message-util": "^1.1",
+        "composer/ca-bundle": "^1.5.5",
+        "fig/http-message-util": "^1.1.5",
         "google/recaptcha": "^1.3",
-        "laminas/laminas-httphandlerrunner": "^2.6",
+        "laminas/laminas-httphandlerrunner": "^2.11",
         "nikic/fast-route": "^1.3",
         "phpmyadmin/motranslator": "^6.0-dev",
         "phpmyadmin/shapefile": "^4.0-dev",
         "phpmyadmin/sql-parser": "^6.0-dev",
-        "psr/container": "^2.0",
-        "psr/http-factory": "^1.0",
+        "psr/container": "^2.0.2",
+        "psr/http-factory": "^1.1",
         "psr/http-message": "^1.1",
-        "psr/http-server-handler": "^1.0",
-        "psr/http-server-middleware": "^1.0",
-        "slim/psr7": "^1.6.1",
-        "symfony/config": "^7.1",
-        "symfony/dependency-injection": "^7.1",
-        "symfony/expression-language": "^7.1",
-        "symfony/polyfill-ctype": "^1.24",
-        "symfony/polyfill-mbstring": "^1.24",
-        "twig/twig": "^3.19",
-        "webmozart/assert": "^1.10",
-        "williamdes/mariadb-mysql-kbs": "^1.2"
+        "psr/http-server-handler": "^1.0.2",
+        "psr/http-server-middleware": "^1.0.2",
+        "slim/psr7": "^1.7.0",
+        "symfony/config": "^7.2.3",
+        "symfony/dependency-injection": "^7.2.4",
+        "symfony/expression-language": "^7.2",
+        "symfony/polyfill-ctype": "^1.31",
+        "symfony/polyfill-mbstring": "^1.31",
+        "twig/twig": "^3.20",
+        "webmozart/assert": "^1.11",
+        "williamdes/mariadb-mysql-kbs": "^1.3"
     },
     "conflict": {
         "bacon/bacon-qr-code": "<2.0",
@@ -99,28 +105,28 @@
         "web-auth/webauthn-lib": "For better WebAuthn/FIDO2 authentication support"
     },
     "require-dev": {
-        "bacon/bacon-qr-code": "^2.0",
-        "code-lts/u2f-php-server": "^1.2",
-        "guzzlehttp/psr7": "^2.5",
-        "httpsoft/http-message": "^1.1",
-        "laminas/laminas-diactoros": "^3.0",
-        "nyholm/psr7": "^1.8",
-        "php-webdriver/webdriver": "^1.14",
-        "phpmyadmin/coding-standard": "^4.0",
-        "phpstan/extension-installer": "^1.4",
-        "phpstan/phpstan": "^2.0",
-        "phpstan/phpstan-deprecation-rules": "^2.0",
-        "phpstan/phpstan-phpunit": "^2.0",
-        "phpstan/phpstan-strict-rules": "^2.0",
+        "bacon/bacon-qr-code": "^2.0.8",
+        "code-lts/u2f-php-server": "^1.2.2",
+        "guzzlehttp/psr7": "^2.7",
+        "httpsoft/http-message": "^1.1.6",
+        "laminas/laminas-diactoros": "^3.5",
+        "nyholm/psr7": "^1.8.2",
+        "php-webdriver/webdriver": "^1.15.2",
+        "phpmyadmin/coding-standard": "^4.0.1",
+        "phpstan/extension-installer": "^1.4.3",
+        "phpstan/phpstan": "^2.1.6",
+        "phpstan/phpstan-deprecation-rules": "^2.0.1",
+        "phpstan/phpstan-phpunit": "^2.0.4",
+        "phpstan/phpstan-strict-rules": "^2.0.3",
         "phpstan/phpstan-webmozart-assert": "^2.0",
-        "phpunit/phpunit": "^11.5",
+        "phpunit/phpunit": "^11.5.10",
         "pragmarx/google2fa-qrcode": "^3.0",
-        "psalm/plugin-phpunit": "^0.19",
+        "psalm/plugin-phpunit": "^0.19.2",
         "roave/security-advisories": "dev-latest",
-        "symfony/console": "^7.1",
-        "tecnickcom/tcpdf": "^6.4.4",
-        "vimeo/psalm": "^6.0",
-        "web-auth/webauthn-lib": "^4.9"
+        "symfony/console": "^7.2.1",
+        "tecnickcom/tcpdf": "^6.8.2",
+        "vimeo/psalm": "^6.8.8",
+        "web-auth/webauthn-lib": "^4.9.2"
     },
     "extra": {
         "branch-alias": {
@@ -145,7 +151,7 @@
         ],
         "twig-lint": "@php bin/console lint:twig --ansi --show-deprecations"
     },
-    "config":{
+    "config": {
         "sort-packages": true,
         "discard-changes": true,
         "allow-plugins": {
@@ -156,5 +162,6 @@
         "platform": {
             "php": "8.2.99"
         }
-    }
+    },
+    "version": "6.0.1"
 }

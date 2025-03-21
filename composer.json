@@ -117,15 +117,15 @@
         "phpstan/phpstan": "^2.1.8",
         "phpstan/phpstan-deprecation-rules": "^2.0.1",
         "phpstan/phpstan-phpunit": "^2.0.4",
-        "phpstan/phpstan-strict-rules": "^2.0.3",
+        "phpstan/phpstan-strict-rules": "^2.0.4",
         "phpstan/phpstan-webmozart-assert": "^2.0",
-        "phpunit/phpunit": "^11.5.12",
+        "phpunit/phpunit": "^11.5.14",
         "pragmarx/google2fa-qrcode": "^3.0",
-        "psalm/plugin-phpunit": "^0.19.2",
+        "psalm/plugin-phpunit": "^0.19.3",
         "roave/security-advisories": "dev-latest",
         "symfony/console": "^7.2.1",
         "tecnickcom/tcpdf": "^6.8.2",
-        "vimeo/psalm": "^6.8.9",
+        "vimeo/psalm": "^6.9.4",
         "web-auth/webauthn-lib": "^4.9.2"
     },
     "extra": {
@@ -163,5 +163,5 @@
             "php": "8.2.99"
         }
     },
-    "version": "6.0.2"
+    "version": "6.0.3"
 }

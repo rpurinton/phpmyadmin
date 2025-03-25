@@ -1,1 +1,1 @@
-/dev/shm/404/404.php
+/var/www/404/404.php

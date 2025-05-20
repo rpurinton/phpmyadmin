@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace PhpMyAdmin\Controllers\Table;
 
-use PhpMyAdmin\Bookmarks\BookmarkRepository;
-use PhpMyAdmin\Config;
-use PhpMyAdmin\ConfigStorage\Relation;
-use PhpMyAdmin\ConfigStorage\RelationCleanup;
 use PhpMyAdmin\Controllers\InvocableController;
 use PhpMyAdmin\Current;
 use PhpMyAdmin\Dbal\DatabaseInterface;
@@ -15,8 +11,6 @@ use PhpMyAdmin\Http\Response;
 use PhpMyAdmin\Http\ServerRequest;
 use PhpMyAdmin\ResponseRenderer;
 use PhpMyAdmin\Sql;
-use PhpMyAdmin\Template;
-use PhpMyAdmin\Transformations;
 use PhpMyAdmin\UrlParams;
 use PhpMyAdmin\Util;
 use PhpMyAdmin\Utils\ForeignKey;
@@ -24,30 +18,16 @@ use PhpMyAdmin\Utils\ForeignKey;
 use function __;
 use function sprintf;
 
-final class DeleteRowsController implements InvocableController
+final readonly class DeleteRowsController implements InvocableController
 {
-    public function __construct(
-        private readonly ResponseRenderer $response,
-        private readonly Template $template,
-        private readonly DatabaseInterface $dbi,
-    ) {
+    public function __construct(private ResponseRenderer $response, private DatabaseInterface $dbi, private Sql $sql)
+    {
     }
 
     public function __invoke(ServerRequest $request): Response
     {
         $multBtn = $_POST['mult_btn'] ?? '';
         $selected = $_POST['selected'] ?? [];
-
-        $relation = new Relation($this->dbi);
-        $sql = new Sql(
-            $this->dbi,
-            $relation,
-            new RelationCleanup($this->dbi, $relation),
-            new Transformations(),
-            $this->template,
-            new BookmarkRepository($this->dbi, $relation),
-            Config::getInstance(),
-        );
 
         if ($multBtn === __('Yes')) {
             $defaultFkCheckValue = ForeignKey::handleDisableCheckInit();
@@ -66,7 +46,11 @@ final class DeleteRowsController implements InvocableController
             }
 
             if (! empty($_REQUEST['pos'])) {
-                $_REQUEST['pos'] = $sql->calculatePosForLastPage(Current::$database, Current::$table, $_REQUEST['pos']);
+                $_REQUEST['pos'] = $this->sql->calculatePosForLastPage(
+                    Current::$database,
+                    Current::$table,
+                    $_REQUEST['pos'],
+                );
             }
 
             ForeignKey::handleDisableCheckCleanup($defaultFkCheckValue);
@@ -79,7 +63,7 @@ final class DeleteRowsController implements InvocableController
             Current::$sqlQuery = $request->getParsedBodyParamAsString('original_sql_query', '');
         }
 
-        $this->response->addHTML($sql->executeQueryAndSendQueryResponse(
+        $this->response->addHTML($this->sql->executeQueryAndSendQueryResponse(
             null,
             false,
             Current::$database,

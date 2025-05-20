@@ -24,6 +24,7 @@ use function htmlspecialchars;
 use function implode;
 use function in_array;
 use function is_array;
+use function is_numeric;
 use function is_string;
 use function json_encode;
 use function max;
@@ -44,7 +45,7 @@ use const PASSWORD_DEFAULT;
 
 class InsertEdit
 {
-    private const FUNC_OPTIONAL_PARAM = ['RAND', 'UNIX_TIMESTAMP'];
+    private const FUNC_OPTIONAL_PARAM = ['NOW', 'RAND', 'UNIX_TIMESTAMP'];
 
     private const FUNC_NO_PARAM = [
         'CONNECTION_ID',
@@ -1132,6 +1133,13 @@ class InsertEdit
                     . $this->dbi->quoteString($editField->salt) . ')';
             }
 
+            if (
+                $editField->function === 'NOW'
+                && (is_numeric($editField->value) && $editField->value >= 0 && $editField->value <= 6)
+            ) {
+                return $editField->function . '(' . (int) $editField->value . ')';
+            }
+
             return $editField->function . '(' . $this->dbi->quoteString($editField->value) . ')';
         }
 
@@ -1865,7 +1873,11 @@ class InsertEdit
     /** @return array<string|null> */
     public function getColumnDefaultValues(string $database, string $table): array
     {
-        $sql = 'SELECT COLUMN_NAME, COLUMN_DEFAULT FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '
+        $sql = 'SELECT COLUMN_NAME, CASE WHEN INSTR(EXTRA, \'DEFAULT_GENERATED\')'
+            . ' THEN COLUMN_DEFAULT '
+            . ' ELSE CONCAT(\'\'\'\', COLUMN_DEFAULT, \'\'\'\')'
+            . ' END AS COLUMN_DEFAULT'
+            . ' FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '
             . $this->dbi->quoteString($table)
             . ' AND TABLE_SCHEMA = ' . $this->dbi->quoteString($database);
 

@@ -25,7 +25,8 @@ final class RoutinesControllerTest extends AbstractTestCase
     {
         Current::$server = 2;
         Current::$database = 'test_db';
-        Config::getInstance()->selectedServer['DisableIS'] = true;
+        $config = Config::getInstance();
+        $config->selectedServer['DisableIS'] = true;
 
         $dummyDbi = $this->createDbiDummy();
         // phpcs:disable Generic.Files.LineLength.TooLong
@@ -38,20 +39,20 @@ final class RoutinesControllerTest extends AbstractTestCase
             ['Grants for definer@localhost'],
         );
         $dummyDbi->addResult(
-            'SHOW FUNCTION STATUS WHERE `Db` = \'test_db\'',
-            [['test_db', 'test_func', 'FUNCTION', 'definer@localhost']],
-            ['Db', 'Name', 'Type', 'Definer'],
-        );
-        $dummyDbi->addResult(
-            'SHOW PROCEDURE STATUS WHERE `Db` = \'test_db\'',
-            [['test_db', 'test_proc', 'PROCEDURE', 'definer@localhost']],
-            ['Db', 'Name', 'Type', 'Definer'],
+            "SELECT `SPECIFIC_NAME` AS `Name`, `ROUTINE_TYPE` AS `Type`, `DEFINER` AS `Definer`, `DTD_IDENTIFIER` FROM `information_schema`.`ROUTINES` WHERE `ROUTINE_SCHEMA` COLLATE utf8_bin = 'test_db' ORDER BY `SPECIFIC_NAME` LIMIT 250",
+            [['test_db', 'test_func', 'FUNCTION', 'definer@localhost', null], ['test_db', 'test_proc', 'PROCEDURE', 'definer@localhost', null]],
+            ['Db', 'Name', 'Type', 'Definer', 'DTD_IDENTIFIER'],
         );
         $dummyDbi->addResult('SELECT @@lower_case_table_names', []);
         $dummyDbi->addResult(
-            "SELECT `DEFINER` FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_SCHEMA COLLATE utf8_bin='test_db' AND SPECIFIC_NAME='test_func' AND ROUTINE_TYPE='FUNCTION';",
-            [['definer@localhost']],
-            ['DEFINER'],
+            "SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''definer''@''localhost''' AND PRIVILEGE_TYPE='CREATE ROUTINE'",
+            [['CREATE ROUTINE']],
+            ['PRIVILEGE_TYPE'],
+        );
+        $dummyDbi->addResult(
+            "SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''definer''@''localhost''' AND PRIVILEGE_TYPE='EXECUTE'",
+            [['EXECUTE']],
+            ['PRIVILEGE_TYPE'],
         );
         $dummyDbi->addResult(
             "SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''definer''@''localhost''' AND PRIVILEGE_TYPE='CREATE ROUTINE'",
@@ -64,34 +65,14 @@ final class RoutinesControllerTest extends AbstractTestCase
             ['PRIVILEGE_TYPE'],
         );
         $dummyDbi->addResult(
-            'SHOW CREATE FUNCTION `test_db`.`test_func`',
-            [['test_func', 'CREATE FUNCTION `test_func` (p INT) RETURNS int(11) BEGIN END']],
-            ['Function', 'Create Function'],
-        );
-        $dummyDbi->addResult(
-            "SELECT `DEFINER` FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_SCHEMA COLLATE utf8_bin='test_db' AND SPECIFIC_NAME='test_proc' AND ROUTINE_TYPE='PROCEDURE';",
-            [['definer@localhost']],
-            ['DEFINER'],
-        );
-        $dummyDbi->addResult(
             "SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''definer''@''localhost''' AND PRIVILEGE_TYPE='CREATE ROUTINE'",
             [['CREATE ROUTINE']],
             ['PRIVILEGE_TYPE'],
         );
         $dummyDbi->addResult(
-            "SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''definer''@''localhost''' AND PRIVILEGE_TYPE='EXECUTE'",
-            [['EXECUTE']],
-            ['PRIVILEGE_TYPE'],
-        );
-        $dummyDbi->addResult(
-            'SHOW CREATE PROCEDURE `test_db`.`test_proc`',
-            [['test_proc2', 'CREATE PROCEDURE `test_proc2` (p INT) BEGIN END']],
-            ['Procedure', 'Create Procedure'],
-        );
-        $dummyDbi->addResult(
-            "SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''definer''@''localhost''' AND PRIVILEGE_TYPE='CREATE ROUTINE'",
-            [['CREATE ROUTINE']],
-            ['PRIVILEGE_TYPE'],
+            "SELECT COUNT(*) AS `count` FROM `information_schema`.`ROUTINES` WHERE `ROUTINE_SCHEMA` COLLATE utf8_bin = 'test_db'",
+            [[2]],
+            ['count'],
         );
         // phpcs:enable
 
@@ -110,6 +91,7 @@ final class RoutinesControllerTest extends AbstractTestCase
             $dbi,
             new Routines($dbi),
             new DbTableExists($dbi),
+            $config,
         ))($request);
 
         $actual = $response->getHTMLResult();
@@ -149,9 +131,7 @@ final class RoutinesControllerTest extends AbstractTestCase
         <span class="text-nowrap"><img src="themes/dot.gif" title="Create new routine" alt="Create new routine" class="icon ic_b_routine_add">&nbsp;Create new routine</span>
       </a>
     </div>
-  </div>
-
-  <form id="rteListForm" class="ajax" action="index.php?route=/database/routines&server=2&lang=en">
+  </div><form id="rteListForm" class="ajax" action="index.php?route=/database/routines&server=2&lang=en">
     <input type="hidden" name="db" value="test_db"><input type="hidden" name="server" value="2"><input type="hidden" name="lang" value="en"><input type="hidden" name="token" value="token">
 
     <div id="nothing2display" class="hide">
@@ -188,10 +168,10 @@ final class RoutinesControllerTest extends AbstractTestCase
       </a>
       </td>
   <td>
-                  <a class="ajax exec_anchor" href="index.php?route=/database/routines&db=test_db&table=&execute_dialog=1&item_name=test_func&item_type=FUNCTION&server=2&lang=en">
-          <span class="text-nowrap"><img src="themes/dot.gif" title="Execute" alt="Execute" class="icon ic_b_nextpage">&nbsp;Execute</span>
-        </a>
-            </td>
+          <a class="ajax exec_anchor" href="index.php?route=/database/routines&db=test_db&table=&execute_dialog=1&item_name=test_func&item_type=FUNCTION&server=2&lang=en">
+        <span class="text-nowrap"><img src="themes/dot.gif" title="Execute" alt="Execute" class="icon ic_b_nextpage">&nbsp;Execute</span>
+      </a>
+      </td>
   <td>
           <a class="ajax export_anchor" href="index.php?route=/database/routines&db=test_db&table=&export_item=1&item_name=test_func&item_type=FUNCTION&server=2&lang=en">
         <span class="text-nowrap"><img src="themes/dot.gif" title="Export" alt="Export" class="icon ic_b_export">&nbsp;Export</span>
@@ -217,10 +197,10 @@ final class RoutinesControllerTest extends AbstractTestCase
       </a>
       </td>
   <td>
-                  <a class="ajax exec_anchor" href="index.php?route=/database/routines&db=test_db&table=&execute_dialog=1&item_name=test_proc&item_type=PROCEDURE&server=2&lang=en">
-          <span class="text-nowrap"><img src="themes/dot.gif" title="Execute" alt="Execute" class="icon ic_b_nextpage">&nbsp;Execute</span>
-        </a>
-            </td>
+          <a class="ajax exec_anchor" href="index.php?route=/database/routines&db=test_db&table=&execute_dialog=1&item_name=test_proc&item_type=PROCEDURE&server=2&lang=en">
+        <span class="text-nowrap"><img src="themes/dot.gif" title="Execute" alt="Execute" class="icon ic_b_nextpage">&nbsp;Execute</span>
+      </a>
+      </td>
   <td>
           <a class="ajax export_anchor" href="index.php?route=/database/routines&db=test_db&table=&export_item=1&item_name=test_proc&item_type=PROCEDURE&server=2&lang=en">
         <span class="text-nowrap"><img src="themes/dot.gif" title="Export" alt="Export" class="icon ic_b_export">&nbsp;Export</span>
@@ -233,20 +213,76 @@ final class RoutinesControllerTest extends AbstractTestCase
 
       </tbody>
     </table>
-  </form>
+  </form><div class="modal fade" id="routinesEditorModal" tabindex="-1" aria-labelledby="routinesEditorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="routinesEditorModalLabel">Routine editor</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading…</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="routinesEditorModalSaveButton">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="routinesExportModal" tabindex="-1" aria-labelledby="routinesExportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="routinesExportModalLabel">Export routine</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="routinesExecuteModal" tabindex="-1" aria-labelledby="routinesExecuteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="routinesExecuteModalLabel">Execute routine</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading…</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="routinesExecuteModalExecuteButton">Execute</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 HTML;
         // phpcs:enable
 
         self::assertSame($expected, $actual);
+        $dummyDbi->assertAllQueriesConsumed();
+        $dummyDbi->assertAllSelectsConsumed();
     }
 
     public function testWithoutRoutines(): void
     {
         Current::$server = 2;
         Current::$database = 'test_db';
-        Config::getInstance()->selectedServer['DisableIS'] = true;
+        $config = Config::getInstance();
+        $config->selectedServer['DisableIS'] = true;
 
         $dummyDbi = $this->createDbiDummy();
         // phpcs:disable Generic.Files.LineLength.TooLong
@@ -258,12 +294,21 @@ HTML;
             [['GRANT ALL PRIVILEGES ON *.* TO `definer`@`localhost`']],
             ['Grants for definer@localhost'],
         );
-        $dummyDbi->addResult('SHOW FUNCTION STATUS WHERE `Db` = \'test_db\'', [], ['Db', 'Name', 'Type', 'Definer']);
-        $dummyDbi->addResult('SHOW PROCEDURE STATUS WHERE `Db` = \'test_db\'', [], ['Db', 'Name', 'Type', 'Definer']);
         $dummyDbi->addResult(
             "SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''definer''@''localhost''' AND PRIVILEGE_TYPE='CREATE ROUTINE'",
             [['CREATE ROUTINE']],
             ['PRIVILEGE_TYPE'],
+        );
+        $dummyDbi->addResult('SELECT @@lower_case_table_names', []);
+        $dummyDbi->addResult(
+            "SELECT COUNT(*) AS `count` FROM `information_schema`.`ROUTINES` WHERE `ROUTINE_SCHEMA` COLLATE utf8_bin = 'test_db'",
+            [[1]],
+            ['count'],
+        );
+        $dummyDbi->addResult(
+            "SELECT `SPECIFIC_NAME` AS `Name`, `ROUTINE_TYPE` AS `Type`, `DEFINER` AS `Definer`, `DTD_IDENTIFIER` FROM `information_schema`.`ROUTINES` WHERE `ROUTINE_SCHEMA` COLLATE utf8_bin = 'test_db' ORDER BY `SPECIFIC_NAME` LIMIT 250",
+            [],
+            ['Db', 'Name', 'Type', 'Definer', 'DTD_IDENTIFIER'],
         );
         // phpcs:enable
 
@@ -282,6 +327,7 @@ HTML;
             $dbi,
             new Routines($dbi),
             new DbTableExists($dbi),
+            $config,
         ))($request);
 
         $actual = $response->getHTMLResult();
@@ -299,9 +345,7 @@ HTML;
         <span class="text-nowrap"><img src="themes/dot.gif" title="Create new routine" alt="Create new routine" class="icon ic_b_routine_add">&nbsp;Create new routine</span>
       </a>
     </div>
-  </div>
-
-  <form id="rteListForm" class="ajax" action="index.php?route=/database/routines&server=2&lang=en">
+  </div><form id="rteListForm" class="ajax" action="index.php?route=/database/routines&server=2&lang=en">
     <input type="hidden" name="db" value="test_db"><input type="hidden" name="server" value="2"><input type="hidden" name="lang" value="en"><input type="hidden" name="token" value="token">
 
     <div id="nothing2display">
@@ -325,12 +369,67 @@ HTML;
       <tr class="hide"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
       </tbody>
     </table>
-  </form>
+  </form><div class="modal fade" id="routinesEditorModal" tabindex="-1" aria-labelledby="routinesEditorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="routinesEditorModalLabel">Routine editor</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading…</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="routinesEditorModalSaveButton">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="routinesExportModal" tabindex="-1" aria-labelledby="routinesExportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="routinesExportModalLabel">Export routine</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="routinesExecuteModal" tabindex="-1" aria-labelledby="routinesExecuteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="routinesExecuteModalLabel">Execute routine</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading…</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="routinesExecuteModalExecuteButton">Execute</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 HTML;
         // phpcs:enable
 
         self::assertSame($expected, $actual);
+        $dummyDbi->assertAllQueriesConsumed();
+        $dummyDbi->assertAllSelectsConsumed();
     }
 }

@@ -11,7 +11,7 @@ use PhpMyAdmin\Dbal\DatabaseInterface;
 use PhpMyAdmin\DbTableExists;
 use PhpMyAdmin\Html\Generator;
 use PhpMyAdmin\Html\MySQLDocumentation;
-use PhpMyAdmin\Index;
+use PhpMyAdmin\Indexes\Index;
 use PhpMyAdmin\Message;
 use PhpMyAdmin\Table\Indexes;
 use PhpMyAdmin\Table\Table;
@@ -99,6 +99,7 @@ class IndexesControllerTest extends AbstractTestCase
             $dbi,
             new Indexes($dbi),
             new DbTableExists($dbi),
+            Config::getInstance(),
         );
 
         $_POST['create_index'] = true;

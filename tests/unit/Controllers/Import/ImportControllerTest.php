@@ -41,7 +41,8 @@ class ImportControllerTest extends AbstractTestCase
     {
         $this->setLanguage();
 
-        Config::getInstance()->selectedServer['user'] = 'user';
+        $config = Config::getInstance();
+        $config->selectedServer['user'] = 'user';
 
         // Some params were not added as they are not required for this test
         Sql::$showAsPhp = null;
@@ -85,7 +86,8 @@ class ImportControllerTest extends AbstractTestCase
                 . ' `COLUMN_COMMENT` AS `Comment`'
                 . ' FROM `information_schema`.`COLUMNS`'
                 . ' WHERE `TABLE_SCHEMA` COLLATE utf8_bin = \'pma_test\' AND'
-                . ' `TABLE_NAME` COLLATE utf8_bin = \'table1\'',
+                . ' `TABLE_NAME` COLLATE utf8_bin = \'table1\''
+                . ' ORDER BY `ORDINAL_POSITION`',
             [],
         );
 
@@ -100,7 +102,7 @@ class ImportControllerTest extends AbstractTestCase
             self::createStub(Transformations::class),
             $template,
             $bookmarkRepository,
-            Config::getInstance(),
+            $config,
         );
 
         $importController = new ImportController(
@@ -109,6 +111,7 @@ class ImportControllerTest extends AbstractTestCase
             $sql,
             $this->dbi,
             $bookmarkRepository,
+            $config,
         );
 
         $this->dummyDbi->addSelectDb('pma_test');

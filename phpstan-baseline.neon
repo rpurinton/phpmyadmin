@@ -1122,7 +1122,7 @@ parameters:
 		-
 			message: '#^Cannot cast mixed to int\.$#'
 			identifier: cast.int
-			count: 35
+			count: 36
 			path: src/Config/Settings.php
 
 		-
@@ -1783,33 +1783,6 @@ parameters:
 			path: src/Console.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/CheckRelationsController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 2
-			path: src/Controllers/Console/Bookmark/AddController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Database/CentralColumnsController.php
-
-		-
 			message: '#^Binary operation "\.\=" between mixed and '' \-\> '' results in an error\.$#'
 			identifier: assignOp.invalid
 			count: 1
@@ -1960,15 +1933,6 @@ parameters:
 			path: src/Controllers/Database/EventsController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 3
-			path: src/Controllers/Database/ImportController.php
-
-		-
 			message: '#^Cannot access offset ''handler'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 2
@@ -1987,27 +1951,9 @@ parameters:
 			path: src/Controllers/Database/MultiTableQuery/QueryController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Database/PrivilegesController.php
-
-		-
 			message: '#^Binary operation "\-" between mixed and 1 results in an error\.$#'
 			identifier: binaryOp.invalid
 			count: 6
-			path: src/Controllers/Database/RoutinesController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
 			path: src/Controllers/Database/RoutinesController.php
 
 		-
@@ -2026,6 +1972,12 @@ parameters:
 			message: '#^Cannot access offset int\<0, max\> on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 4
+			path: src/Controllers/Database/RoutinesController.php
+
+		-
+			message: '#^Cannot cast mixed to int\.$#'
+			identifier: cast.int
+			count: 1
 			path: src/Controllers/Database/RoutinesController.php
 
 		-
@@ -2077,6 +2029,12 @@ parameters:
 			path: src/Controllers/Database/RoutinesController.php
 
 		-
+			message: '#^Parameter \#1 \$value of static method PhpMyAdmin\\Database\\RoutineType\:\:tryFrom\(\) expects int\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Controllers/Database/RoutinesController.php
+
+		-
 			message: '#^Parameter \#2 \$type of method PhpMyAdmin\\Database\\Routines\:\:getDataFromName\(\) expects string, mixed given\.$#'
 			identifier: argument.type
 			count: 3
@@ -2095,25 +2053,10 @@ parameters:
 			path: src/Controllers/Database/RoutinesController.php
 
 		-
-			message: '#^Parameter \#3 \$which of static method PhpMyAdmin\\Database\\Routines\:\:getDetails\(\) expects string\|null, mixed given\.$#'
-			identifier: argument.type
-			count: 1
-			path: src/Controllers/Database/RoutinesController.php
-
-		-
 			message: '#^Parameter \#4 \$name of static method PhpMyAdmin\\Database\\Routines\:\:getDetails\(\) expects string, mixed given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/Controllers/Database/RoutinesController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Database/SearchController.php
 
 		-
 			message: '#^Construct empty\(\) is not allowed\. Use more strict comparison\.$#'
@@ -2167,15 +2110,6 @@ parameters:
 			path: src/Controllers/Database/Structure/DropTableController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Database/Structure/EmptyTableController.php
-
-		-
 			message: '#^Construct empty\(\) is not allowed\. Use more strict comparison\.$#'
 			identifier: empty.notAllowed
 			count: 1
@@ -2188,15 +2122,6 @@ parameters:
 			path: src/Controllers/Database/Structure/EmptyTableController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Database/Structure/FavoriteTableController.php
-
-		-
 			message: '#^Loose comparison via "\=\=" is not allowed\.$#'
 			identifier: equal.notAllowed
 			count: 1
@@ -2207,6 +2132,18 @@ parameters:
 			identifier: cast.string
 			count: 1
 			path: src/Controllers/Database/Structure/RealRowCountController.php
+
+		-
+			message: '#^Binary operation "\*" between mixed and int results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: src/Controllers/Database/StructureController.php
+
+		-
+			message: '#^Binary operation "\+" between \(float\|int\) and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: src/Controllers/Database/StructureController.php
 
 		-
 			message: '#^Binary operation "\+" between mixed and mixed results in an error\.$#'
@@ -2230,15 +2167,6 @@ parameters:
 			message: '#^Binary operation "\." between non\-falsy\-string and mixed results in an error\.$#'
 			identifier: binaryOp.invalid
 			count: 1
-			path: src/Controllers/Database/StructureController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 5
 			path: src/Controllers/Database/StructureController.php
 
 		-
@@ -2298,6 +2226,12 @@ parameters:
 		-
 			message: '#^Parameter \#1 \$identifier of static method PhpMyAdmin\\Util\:\:backquote\(\) expects string\|Stringable\|null, mixed given\.$#'
 			identifier: argument.type
+			count: 3
+			path: src/Controllers/Database/StructureController.php
+
+		-
+			message: '#^Parameter \#1 \$str of method PhpMyAdmin\\Dbal\\DatabaseInterface\:\:quoteString\(\) expects string, mixed given\.$#'
+			identifier: argument.type
 			count: 2
 			path: src/Controllers/Database/StructureController.php
 
@@ -2352,7 +2286,7 @@ parameters:
 		-
 			message: '#^Parameter \#2 \$tableName of method PhpMyAdmin\\Dbal\\DatabaseInterface\:\:getTable\(\) expects string, mixed given\.$#'
 			identifier: argument.type
-			count: 4
+			count: 5
 			path: src/Controllers/Database/StructureController.php
 
 		-
@@ -2360,15 +2294,6 @@ parameters:
 			identifier: argument.type
 			count: 1
 			path: src/Controllers/Database/StructureController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Database/TrackingController.php
 
 		-
 			message: '#^Parameter \#2 \$selected of method PhpMyAdmin\\Tracking\\Tracking\:\:createTrackingForMultipleTables\(\) expects array\<mixed\>, mixed given\.$#'
@@ -2389,15 +2314,6 @@ parameters:
 			path: src/Controllers/ErrorReportController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/ErrorReportController.php
-
-		-
 			message: '#^Cannot access offset ''success'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
@@ -2414,15 +2330,6 @@ parameters:
 			identifier: booleanAnd.rightNotBoolean
 			count: 1
 			path: src/Controllers/ErrorReportController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Export/ExportController.php
 
 		-
 			message: '#^Cannot access offset ''aliases'' on mixed\.$#'
@@ -2497,42 +2404,6 @@ parameters:
 			path: src/Controllers/Export/ExportController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Export/Template/CreateController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Export/Template/DeleteController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Export/Template/LoadController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Export/Template/UpdateController.php
-
-		-
 			message: '#^Cannot cast mixed to int\.$#'
 			identifier: cast.int
 			count: 1
@@ -2543,15 +2414,6 @@ parameters:
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Controllers/GisDataEditorController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 3
-			path: src/Controllers/HomeController.php
 
 		-
 			message: '#^Construct empty\(\) is not allowed\. Use more strict comparison\.$#'
@@ -2582,15 +2444,6 @@ parameters:
 			identifier: booleanOr.rightNotBoolean
 			count: 1
 			path: src/Controllers/HomeController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Import/ImportController.php
 
 		-
 			message: '#^Cannot access offset ''go_back_url'' on mixed\.$#'
@@ -2785,15 +2638,6 @@ parameters:
 			path: src/Controllers/Normalization/ThirdNormalForm/NewTablesController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Operations/DatabaseController.php
-
-		-
 			message: '#^Construct empty\(\) is not allowed\. Use more strict comparison\.$#'
 			identifier: empty.notAllowed
 			count: 1
@@ -2816,15 +2660,6 @@ parameters:
 			identifier: argument.type
 			count: 1
 			path: src/Controllers/Operations/DatabaseController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Operations/TableController.php
 
 		-
 			message: '#^Construct empty\(\) is not allowed\. Use more strict comparison\.$#'
@@ -2855,42 +2690,6 @@ parameters:
 			identifier: argument.type
 			count: 1
 			path: src/Controllers/Operations/TableController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Preferences/ExportController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Preferences/FeaturesController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Preferences/ImportController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Preferences/MainPanelController.php
 
 		-
 			message: '#^Loose comparison via "\!\=" is not allowed\.$#'
@@ -2947,82 +2746,10 @@ parameters:
 			path: src/Controllers/Preferences/ManageController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Preferences/NavigationController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Preferences/SqlController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Preferences/TwoFactorController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Server/BinlogController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Server/CollationsController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Server/Databases/CreateController.php
-
-		-
 			message: '#^Only booleans are allowed in a negated boolean, PhpMyAdmin\\Dbal\\ResultInterface\|false given\.$#'
 			identifier: booleanNot.exprNotBoolean
 			count: 1
 			path: src/Controllers/Server/Databases/CreateController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Server/Databases/DestroyController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 2
-			path: src/Controllers/Server/DatabasesController.php
 
 		-
 			message: '#^Call to function array_search\(\) requires parameter \#3 to be set\.$#'
@@ -3095,15 +2822,6 @@ parameters:
 			identifier: argument.type
 			count: 1
 			path: src/Controllers/Server/DatabasesController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 3
-			path: src/Controllers/Server/ImportController.php
 
 		-
 			message: '#^Cannot access offset ''handler'' on mixed\.$#'
@@ -3376,15 +3094,6 @@ parameters:
 			path: src/Controllers/Sql/RelationalValuesController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Sql/SqlController.php
-
-		-
 			message: '#^Loose comparison via "\!\=" is not allowed\.$#'
 			identifier: notEqual.notAllowed
 			count: 3
@@ -3401,15 +3110,6 @@ parameters:
 			identifier: argument.type
 			count: 1
 			path: src/Controllers/Sql/SqlController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/SyncFavoriteTablesController.php
 
 		-
 			message: '#^Cannot access offset ''db'' on mixed\.$#'
@@ -3532,15 +3232,6 @@ parameters:
 			path: src/Controllers/Table/ChartController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Table/ChartController.php
-
-		-
 			message: '#^Construct empty\(\) is not allowed\. Use more strict comparison\.$#'
 			identifier: empty.notAllowed
 			count: 1
@@ -3609,15 +3300,6 @@ parameters:
 		-
 			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
 			identifier: foreach.nonIterable
-			count: 1
-			path: src/Controllers/Table/DeleteRowsController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
 			count: 1
 			path: src/Controllers/Table/DeleteRowsController.php
 
@@ -3694,15 +3376,6 @@ parameters:
 			path: src/Controllers/Table/ExportRowsController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Table/FindReplaceController.php
-
-		-
 			message: '#^Cannot access offset 0 on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 2
@@ -3745,15 +3418,6 @@ parameters:
 			path: src/Controllers/Table/GetFieldController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 2
-			path: src/Controllers/Table/GisVisualizationController.php
-
-		-
 			message: '#^Cannot access offset ''max_rows'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
@@ -3778,15 +3442,6 @@ parameters:
 			path: src/Controllers/Table/GisVisualizationController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 3
-			path: src/Controllers/Table/ImportController.php
-
-		-
 			message: '#^Cannot access offset ''handler'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 2
@@ -3801,15 +3456,6 @@ parameters:
 		-
 			message: '#^Binary operation "\+\=" between int and mixed results in an error\.$#'
 			identifier: assignOp.invalid
-			count: 1
-			path: src/Controllers/Table/IndexesController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
 			count: 1
 			path: src/Controllers/Table/IndexesController.php
 
@@ -3848,24 +3494,6 @@ parameters:
 			identifier: argument.type
 			count: 2
 			path: src/Controllers/Table/IndexesController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Table/PrivilegesController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 3
-			path: src/Controllers/Table/RelationController.php
 
 		-
 			message: '#^Parameter \#1 \$dbName of method PhpMyAdmin\\Dbal\\DatabaseInterface\:\:getTable\(\) expects string, mixed given\.$#'
@@ -3916,7 +3544,7 @@ parameters:
 			path: src/Controllers/Table/RelationController.php
 
 		-
-			message: '#^Parameter \#2 \$table of static method PhpMyAdmin\\Index\:\:getPrimary\(\) expects string, mixed given\.$#'
+			message: '#^Parameter \#2 \$table of static method PhpMyAdmin\\Indexes\\Index\:\:getPrimary\(\) expects string, mixed given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/Controllers/Table/RelationController.php
@@ -3940,7 +3568,7 @@ parameters:
 			path: src/Controllers/Table/RelationController.php
 
 		-
-			message: '#^Parameter \#3 \$schema of static method PhpMyAdmin\\Index\:\:getPrimary\(\) expects string, mixed given\.$#'
+			message: '#^Parameter \#3 \$schema of static method PhpMyAdmin\\Indexes\\Index\:\:getPrimary\(\) expects string, mixed given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/Controllers/Table/RelationController.php
@@ -4120,15 +3748,6 @@ parameters:
 			path: src/Controllers/Table/ReplaceController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 3
-			path: src/Controllers/Table/SearchController.php
-
-		-
 			message: '#^Cannot access offset int on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
@@ -4285,15 +3904,6 @@ parameters:
 			path: src/Controllers/Table/Structure/ReservedWordCheckController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/Table/Structure/ReservedWordCheckController.php
-
-		-
 			message: '#^Only booleans are allowed in a negated boolean, int\|null given\.$#'
 			identifier: booleanNot.exprNotBoolean
 			count: 1
@@ -4320,15 +3930,6 @@ parameters:
 		-
 			message: '#^Binary operation "\." between non\-falsy\-string and mixed results in an error\.$#'
 			identifier: binaryOp.invalid
-			count: 1
-			path: src/Controllers/Table/Structure/SaveController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
 			count: 1
 			path: src/Controllers/Table/Structure/SaveController.php
 
@@ -4378,12 +3979,6 @@ parameters:
 			message: '#^Loose comparison via "\=\=" is not allowed\.$#'
 			identifier: equal.notAllowed
 			count: 2
-			path: src/Controllers/Table/Structure/SaveController.php
-
-		-
-			message: '#^Only booleans are allowed in an if condition, mixed given\.$#'
-			identifier: if.condNotBoolean
-			count: 1
 			path: src/Controllers/Table/Structure/SaveController.php
 
 		-
@@ -4561,15 +4156,6 @@ parameters:
 			path: src/Controllers/Table/StructureController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 2
-			path: src/Controllers/Table/StructureController.php
-
-		-
 			message: '#^Call to function in_array\(\) requires parameter \#3 to be set\.$#'
 			identifier: function.strict
 			count: 1
@@ -4621,15 +4207,6 @@ parameters:
 			message: '#^Binary operation "\." between non\-falsy\-string and mixed results in an error\.$#'
 			identifier: binaryOp.invalid
 			count: 1
-			path: src/Controllers/Table/ZoomSearchController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 4
 			path: src/Controllers/Table/ZoomSearchController.php
 
 		-
@@ -4765,15 +4342,6 @@ parameters:
 			path: src/Controllers/Table/ZoomSearchController.php
 
 		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/ThemeSetController.php
-
-		-
 			message: '#^Construct empty\(\) is not allowed\. Use more strict comparison\.$#'
 			identifier: empty.notAllowed
 			count: 1
@@ -4808,15 +4376,6 @@ parameters:
 			identifier: argument.type
 			count: 2
 			path: src/Controllers/Triggers/IndexController.php
-
-		-
-			message: '''
-				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
-				Use dependency injection instead\.$#
-			'''
-			identifier: staticMethod.deprecated
-			count: 1
-			path: src/Controllers/UserPasswordController.php
 
 		-
 			message: '#^Loose comparison via "\!\=" is not allowed\.$#'
@@ -5635,24 +5194,18 @@ parameters:
 			path: src/Database/Routines.php
 
 		-
-			message: '#^Binary operation "\.\=" between non\-falsy\-string and mixed results in an error\.$#'
-			identifier: assignOp.invalid
-			count: 1
-			path: src/Database/Routines.php
-
-		-
 			message: '''
 				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
 				Use dependency injection instead\.$#
 			'''
 			identifier: staticMethod.deprecated
-			count: 3
+			count: 2
 			path: src/Database/Routines.php
 
 		-
 			message: '#^Cannot access offset int\<0, max\> on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
-			count: 16
+			count: 15
 			path: src/Database/Routines.php
 
 		-
@@ -5686,12 +5239,6 @@ parameters:
 			path: src/Database/Routines.php
 
 		-
-			message: '#^Cannot assign new offset to list\<string\>\|string\|null\.$#'
-			identifier: offsetAssign.dimType
-			count: 1
-			path: src/Database/Routines.php
-
-		-
 			message: '#^Cannot assign new offset to list\<string\|null\>\|string\.$#'
 			identifier: offsetAssign.dimType
 			count: 1
@@ -5706,7 +5253,7 @@ parameters:
 		-
 			message: '#^Construct empty\(\) is not allowed\. Use more strict comparison\.$#'
 			identifier: empty.notAllowed
-			count: 21
+			count: 13
 			path: src/Database/Routines.php
 
 		-
@@ -5718,7 +5265,7 @@ parameters:
 		-
 			message: '#^Loose comparison via "\=\=" is not allowed\.$#'
 			identifier: equal.notAllowed
-			count: 3
+			count: 1
 			path: src/Database/Routines.php
 
 		-
@@ -5740,12 +5287,6 @@ parameters:
 			path: src/Database/Routines.php
 
 		-
-			message: '#^Parameter \#1 \$haystack of function str_contains expects string, mixed given\.$#'
-			identifier: argument.type
-			count: 1
-			path: src/Database/Routines.php
-
-		-
 			message: '#^Parameter \#1 \$haystack of function stripos expects string, mixed given\.$#'
 			identifier: argument.type
 			count: 2
@@ -5754,7 +5295,7 @@ parameters:
 		-
 			message: '#^Parameter \#1 \$identifier of static method PhpMyAdmin\\Util\:\:backquote\(\) expects string\|Stringable\|null, mixed given\.$#'
 			identifier: argument.type
-			count: 9
+			count: 8
 			path: src/Database/Routines.php
 
 		-
@@ -5772,7 +5313,7 @@ parameters:
 		-
 			message: '#^Parameter \#1 \$str of method PhpMyAdmin\\Dbal\\DatabaseInterface\:\:quoteString\(\) expects string, mixed given\.$#'
 			identifier: argument.type
-			count: 7
+			count: 6
 			path: src/Database/Routines.php
 
 		-
@@ -5784,13 +5325,13 @@ parameters:
 		-
 			message: '#^Parameter \#1 \$string of function htmlspecialchars expects string, mixed given\.$#'
 			identifier: argument.type
-			count: 2
+			count: 1
 			path: src/Database/Routines.php
 
 		-
 			message: '#^Parameter \#1 \$string of function mb_strtolower expects string, mixed given\.$#'
 			identifier: argument.type
-			count: 7
+			count: 5
 			path: src/Database/Routines.php
 
 		-
@@ -5813,12 +5354,6 @@ parameters:
 
 		-
 			message: '#^Parameter \#2 \$itemParamDir of method PhpMyAdmin\\Database\\Routines\:\:processParamsAndBuild\(\) expects array\<string\>, array\<mixed, mixed\> given\.$#'
-			identifier: argument.type
-			count: 1
-			path: src/Database/Routines.php
-
-		-
-			message: '#^Parameter \#2 \$string of function explode expects string, mixed given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/Database/Routines.php
@@ -5860,7 +5395,7 @@ parameters:
 			path: src/Database/Routines.php
 
 		-
-			message: '#^Parameter \#7 \$itemType of method PhpMyAdmin\\Database\\Routines\:\:processParamsAndBuild\(\) expects string, mixed given\.$#'
+			message: '#^Parameter \#7 \$itemType of method PhpMyAdmin\\Database\\Routines\:\:processParamsAndBuild\(\) expects PhpMyAdmin\\Database\\RoutineType, PhpMyAdmin\\Database\\RoutineType\|null given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/Database/Routines.php
@@ -7996,24 +7531,6 @@ parameters:
 			path: src/Git.php
 
 		-
-			message: '#^Offset 1 might not exist on array\{0\?\: string, 1\?\: non\-empty\-string, 2\?\: non\-empty\-string, 3\?\: numeric\-string, 4\?\: non\-falsy\-string\}\.$#'
-			identifier: offsetAccess.notFound
-			count: 1
-			path: src/Git.php
-
-		-
-			message: '#^Offset 2 might not exist on array\{0\?\: string, 1\?\: non\-empty\-string, 2\?\: non\-empty\-string, 3\?\: numeric\-string, 4\?\: non\-falsy\-string\}\.$#'
-			identifier: offsetAccess.notFound
-			count: 1
-			path: src/Git.php
-
-		-
-			message: '#^Offset 3 might not exist on array\{0\?\: string, 1\?\: non\-empty\-string, 2\?\: non\-empty\-string, 3\?\: numeric\-string, 4\?\: non\-falsy\-string\}\.$#'
-			identifier: offsetAccess.notFound
-			count: 1
-			path: src/Git.php
-
-		-
 			message: '#^Only booleans are allowed in an if condition, string\|false given\.$#'
 			identifier: if.condNotBoolean
 			count: 1
@@ -8551,7 +8068,7 @@ parameters:
 			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
 			identifier: foreach.nonIterable
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
 			message: '''
@@ -8560,139 +8077,139 @@ parameters:
 			'''
 			identifier: staticMethod.deprecated
 			count: 3
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
 			message: '#^Cannot access offset mixed on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
 			message: '#^Cannot cast mixed to int\.$#'
 			identifier: cast.int
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
 			message: '#^Only booleans are allowed in &&, int\<0, 1\> given on the left side\.$#'
 			identifier: booleanAnd.leftNotBoolean
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
 			message: '#^Only booleans are allowed in &&, int\<0, 2\> given on the left side\.$#'
 			identifier: booleanAnd.leftNotBoolean
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
 			message: '#^Only booleans are allowed in &&, int\<0, 4\> given on the left side\.$#'
 			identifier: booleanAnd.leftNotBoolean
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
 			message: '#^Only booleans are allowed in &&, int\<0, 8\> given on the left side\.$#'
 			identifier: booleanAnd.leftNotBoolean
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
-			message: '#^Parameter \#1 \$columns of method PhpMyAdmin\\Index\:\:addColumns\(\) expects array\<mixed\>, mixed given\.$#'
+			message: '#^Parameter \#1 \$columns of method PhpMyAdmin\\Indexes\\Index\:\:addColumns\(\) expects array\<mixed\>, mixed given\.$#'
 			identifier: argument.type
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
-			message: '#^Parameter \#1 \$params of method PhpMyAdmin\\Index\:\:addColumn\(\) expects array\<string, string\|null\>, mixed given\.$#'
+			message: '#^Parameter \#1 \$params of method PhpMyAdmin\\Indexes\\Index\:\:addColumn\(\) expects array\<string, string\|null\>, mixed given\.$#'
 			identifier: argument.type
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
-			message: '#^Property PhpMyAdmin\\Index\:\:\$choice \(string\) does not accept mixed\.$#'
+			message: '#^Property PhpMyAdmin\\Indexes\\Index\:\:\$choice \(string\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
-			message: '#^Property PhpMyAdmin\\Index\:\:\$comment \(string\) does not accept mixed\.$#'
+			message: '#^Property PhpMyAdmin\\Indexes\\Index\:\:\$comment \(string\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
-			message: '#^Property PhpMyAdmin\\Index\:\:\$name \(string\) does not accept mixed\.$#'
+			message: '#^Property PhpMyAdmin\\Indexes\\Index\:\:\$name \(string\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
-			message: '#^Property PhpMyAdmin\\Index\:\:\$packed \(string\|null\) does not accept mixed\.$#'
+			message: '#^Property PhpMyAdmin\\Indexes\\Index\:\:\$packed \(string\|null\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
-			message: '#^Property PhpMyAdmin\\Index\:\:\$parser \(string\) does not accept mixed\.$#'
+			message: '#^Property PhpMyAdmin\\Indexes\\Index\:\:\$parser \(string\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
-			message: '#^Property PhpMyAdmin\\Index\:\:\$remarks \(string\) does not accept mixed\.$#'
+			message: '#^Property PhpMyAdmin\\Indexes\\Index\:\:\$remarks \(string\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
-			message: '#^Property PhpMyAdmin\\Index\:\:\$schema \(string\) does not accept mixed\.$#'
+			message: '#^Property PhpMyAdmin\\Indexes\\Index\:\:\$schema \(string\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
-			message: '#^Property PhpMyAdmin\\Index\:\:\$table \(string\) does not accept mixed\.$#'
+			message: '#^Property PhpMyAdmin\\Indexes\\Index\:\:\$table \(string\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
-			message: '#^Property PhpMyAdmin\\Index\:\:\$type \(string\) does not accept mixed\.$#'
+			message: '#^Property PhpMyAdmin\\Indexes\\Index\:\:\$type \(string\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
-			path: src/Index.php
+			path: src/Indexes/Index.php
 
 		-
 			message: '#^Cannot cast mixed to int\.$#'
 			identifier: cast.int
 			count: 3
-			path: src/IndexColumn.php
+			path: src/Indexes/IndexColumn.php
 
 		-
-			message: '#^Property PhpMyAdmin\\IndexColumn\:\:\$collation \(string\|null\) does not accept mixed\.$#'
+			message: '#^Property PhpMyAdmin\\Indexes\\IndexColumn\:\:\$collation \(string\|null\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
-			path: src/IndexColumn.php
+			path: src/Indexes/IndexColumn.php
 
 		-
-			message: '#^Property PhpMyAdmin\\IndexColumn\:\:\$expression \(string\|null\) does not accept mixed\.$#'
+			message: '#^Property PhpMyAdmin\\Indexes\\IndexColumn\:\:\$expression \(string\|null\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
-			path: src/IndexColumn.php
+			path: src/Indexes/IndexColumn.php
 
 		-
-			message: '#^Property PhpMyAdmin\\IndexColumn\:\:\$name \(string\) does not accept mixed\.$#'
+			message: '#^Property PhpMyAdmin\\Indexes\\IndexColumn\:\:\$name \(string\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
-			path: src/IndexColumn.php
+			path: src/Indexes/IndexColumn.php
 
 		-
-			message: '#^Property PhpMyAdmin\\IndexColumn\:\:\$null \(string\) does not accept mixed\.$#'
+			message: '#^Property PhpMyAdmin\\Indexes\\IndexColumn\:\:\$null \(string\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
-			path: src/IndexColumn.php
+			path: src/Indexes/IndexColumn.php
 
 		-
 			message: '#^Binary operation "\." between non\-falsy\-string and mixed results in an error\.$#'
@@ -8751,12 +8268,6 @@ parameters:
 		-
 			message: '#^Method PhpMyAdmin\\InsertEdit\:\:getFormParametersForInsertForm\(\) should return array\<string, string\> but returns array\<string, mixed\>\.$#'
 			identifier: return.type
-			count: 1
-			path: src/InsertEdit.php
-
-		-
-			message: '#^Offset 2 might not exist on array\{0\?\: string, 1\?\: string, 2\?\: string, 3\?\: numeric\-string\}\.$#'
-			identifier: offsetAccess.notFound
 			count: 1
 			path: src/InsertEdit.php
 
@@ -9529,13 +9040,13 @@ parameters:
 			path: src/Normalization.php
 
 		-
-			message: '#^Parameter \#2 \$table of static method PhpMyAdmin\\Index\:\:getPrimary\(\) expects string, \(int\|string\) given\.$#'
+			message: '#^Parameter \#2 \$table of static method PhpMyAdmin\\Indexes\\Index\:\:getPrimary\(\) expects string, \(int\|string\) given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/Normalization.php
 
 		-
-			message: '#^Parameter \#2 \$table of static method PhpMyAdmin\\Index\:\:getPrimary\(\) expects string, mixed given\.$#'
+			message: '#^Parameter \#2 \$table of static method PhpMyAdmin\\Indexes\\Index\:\:getPrimary\(\) expects string, mixed given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/Normalization.php
@@ -10279,7 +9790,7 @@ parameters:
 			path: src/Plugins/Auth/AuthenticationSignon.php
 
 		-
-			message: '#^Property PhpMyAdmin\\Config\:\:\$selectedServer \(array\{host\: string, port\: string, socket\: string, ssl\: bool, ssl_key\: string\|null, ssl_cert\: string\|null, ssl_ca\: string\|null, ssl_ca_path\: string\|null, \.\.\.\}\) does not accept non\-empty\-array\<mixed, mixed\>\.$#'
+			message: '#^Property PhpMyAdmin\\Config\:\:\$selectedServer \(array\{host\: string, port\: string, socket\: string, ssl\: bool, ssl_key\: string\|null, ssl_cert\: string\|null, ssl_ca\: string\|null, ssl_ca_path\: string\|null, \.\.\.\}\) does not accept non\-empty\-array\.$#'
 			identifier: assign.propertyType
 			count: 1
 			path: src/Plugins/Auth/AuthenticationSignon.php
@@ -11752,7 +11263,7 @@ parameters:
 			path: src/Plugins/Import/ImportCsv.php
 
 		-
-			message: '#^Parameter \#3 \$rows of class PhpMyAdmin\\Import\\ImportTable constructor expects list\<list\<mixed\>\>, array\<int\<0, max\>, array\> given\.$#'
+			message: '#^Parameter \#3 \$rows of class PhpMyAdmin\\Import\\ImportTable constructor expects list\<list\<mixed\>\>, list\<array\> given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/Plugins/Import/ImportCsv.php
@@ -11796,12 +11307,6 @@ parameters:
 		-
 			message: '#^Cannot access property \$spreadsheet on SimpleXMLElement\|null\.$#'
 			identifier: property.nonObject
-			count: 1
-			path: src/Plugins/Import/ImportOds.php
-
-		-
-			message: '#^Cannot call method __toString\(\) on mixed\.$#'
-			identifier: method.nonObject
 			count: 1
 			path: src/Plugins/Import/ImportOds.php
 
@@ -11866,7 +11371,7 @@ parameters:
 			path: src/Plugins/Import/ImportOds.php
 
 		-
-			message: '#^Parameter \#3 \$rows of class PhpMyAdmin\\Import\\ImportTable constructor expects list\<list\<mixed\>\>, non\-empty\-array\<int\<0, max\>, array\> given\.$#'
+			message: '#^Parameter \#3 \$rows of class PhpMyAdmin\\Import\\ImportTable constructor expects list\<list\<mixed\>\>, non\-empty\-list\<array\> given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/Plugins/Import/ImportOds.php
@@ -14209,12 +13714,6 @@ parameters:
 			path: src/Server/Status/Monitor.php
 
 		-
-			message: '#^Offset 1 might not exist on array\{0\?\: string, 1\?\: non\-empty\-string\}\.$#'
-			identifier: offsetAccess.notFound
-			count: 1
-			path: src/Server/Status/Monitor.php
-
-		-
 			message: '#^Only booleans are allowed in a negated boolean, mixed given\.$#'
 			identifier: booleanNot.exprNotBoolean
 			count: 4
@@ -16057,12 +15556,6 @@ parameters:
 			path: src/Util.php
 
 		-
-			message: '#^Offset 1 might not exist on array\{0\?\: string, 1\?\: string\}\.$#'
-			identifier: offsetAccess.notFound
-			count: 1
-			path: src/Util.php
-
-		-
 			message: '#^Offset int\<1, 6\> on array\{string, string, string, string, string, string, string\} in isset\(\) always exists and is not nullable\.$#'
 			identifier: isset.offset
 			count: 1
@@ -16231,12 +15724,6 @@ parameters:
 			path: src/Utils/HttpRequest.php
 
 		-
-			message: '#^Offset 1 might not exist on array\{0\?\: string, 1\?\: numeric\-string\}\.$#'
-			identifier: offsetAccess.notFound
-			count: 1
-			path: src/Utils/HttpRequest.php
-
-		-
 			message: '#^Only booleans are allowed in an if condition, string\|false given\.$#'
 			identifier: if.condNotBoolean
 			count: 1
@@ -16355,15 +15842,6 @@ parameters:
 
 		-
 			message: '''
-				#^Call to deprecated method allowCredentials\(\) of class Webauthn\\PublicKeyCredentialRequestOptions\:
-				since 4\.7\.0\. No replacement\. Please use the property directly\.$#
-			'''
-			identifier: method.deprecated
-			count: 1
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
 				#^Call to deprecated method createFromArray\(\) of class Webauthn\\AuthenticatorSelectionCriteria\:
 				since 4\.8\.0\. Please use \{Webauthn\\Denormalizer\\WebauthnSerializerFactory\} for converting the object\.$#
 			'''
@@ -16400,118 +15878,25 @@ parameters:
 
 		-
 			message: '''
-				#^Call to deprecated method getId\(\) of class Webauthn\\PublicKeyCredentialRpEntity\:
-				since 4\.7\.0\. Please use the property directly\.$#
-			'''
-			identifier: method.deprecated
-			count: 1
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
-				#^Call to deprecated method getId\(\) of class Webauthn\\PublicKeyCredentialUserEntity\:
-				since 4\.7\.0\. Please use the property directly\.$#
-			'''
-			identifier: method.deprecated
-			count: 2
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
-				#^Call to deprecated method getPublicKeyCredentialId\(\) of class Webauthn\\PublicKeyCredentialSource\:
-				since 4\.7\.0\. Please use the property directly\.$#
-			'''
-			identifier: method.deprecated
-			count: 1
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
-				#^Call to deprecated method getRawId\(\) of class Webauthn\\PublicKeyCredential\:
-				since 4\.7\.0\. Please use the property directly\.$#
-			'''
-			identifier: method.deprecated
-			count: 1
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
-				#^Call to deprecated method getResponse\(\) of class Webauthn\\PublicKeyCredential\:
-				since 4\.7\.0\. Please use the property directly\.$#
-			'''
-			identifier: method.deprecated
-			count: 2
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
-				#^Call to deprecated method getUserHandle\(\) of class Webauthn\\PublicKeyCredentialSource\:
-				since 4\.7\.0\. Please use the property directly\.$#
-			'''
-			identifier: method.deprecated
-			count: 1
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
-				#^Call to deprecated method setAttestation\(\) of class Webauthn\\PublicKeyCredentialCreationOptions\:
-				since 4\.7\.0\. Please use the \{self\:\:create\} instead\.$#
-			'''
-			identifier: method.deprecated
-			count: 1
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
-				#^Call to deprecated method setAuthenticatorSelection\(\) of class Webauthn\\PublicKeyCredentialCreationOptions\:
-				since 4\.7\.0\. Please use the \{self\:\:create\} instead\.$#
-			'''
-			identifier: method.deprecated
-			count: 1
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
-				#^Call to deprecated method setExtensions\(\) of class Webauthn\\PublicKeyCredentialOptions\:
-				since 4\.7\.0\. Please use the \{self\:\:create\} instead\.$#
-			'''
-			identifier: method.deprecated
-			count: 2
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
-				#^Call to deprecated method setRpId\(\) of class Webauthn\\PublicKeyCredentialRequestOptions\:
-				since 4\.7\.0\. Please use the property directly\.$#
-			'''
-			identifier: method.deprecated
-			count: 1
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
-				#^Call to deprecated method setTimeout\(\) of class Webauthn\\PublicKeyCredentialOptions\:
-				since 4\.7\.0\. Please use the \{self\:\:create\} instead\.$#
-			'''
-			identifier: method.deprecated
-			count: 2
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
-				#^Call to deprecated method setUserVerification\(\) of class Webauthn\\PublicKeyCredentialRequestOptions\:
-				since 4\.7\.0\. Please use the property directly\.$#
-			'''
-			identifier: method.deprecated
-			count: 1
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
 				#^Call to method create\(\) of deprecated class Webauthn\\PublicKeyCredentialLoader\:
 				since 4\.8\.0 and will be removed in 5\.0\.0\. Please use the Symfony serializer instead$#
 			'''
 			identifier: staticMethod.deprecatedClass
+			count: 2
+			path: src/WebAuthn/WebauthnLibServer.php
+
+		-
+			message: '#^Call to method findAllForUserEntity\(\) of deprecated interface Webauthn\\PublicKeyCredentialSourceRepository\.$#'
+			identifier: method.deprecatedInterface
+			count: 1
+			path: src/WebAuthn/WebauthnLibServer.php
+
+		-
+			message: '''
+				#^Call to method load\(\) of deprecated class Webauthn\\PublicKeyCredentialLoader\:
+				since 4\.8\.0 and will be removed in 5\.0\.0\. Please use the Symfony serializer instead$#
+			'''
+			identifier: method.deprecatedClass
 			count: 2
 			path: src/WebAuthn/WebauthnLibServer.php
 
@@ -16547,19 +15932,10 @@ parameters:
 
 		-
 			message: '''
-				#^Instantiation of deprecated class Webauthn\\AuthenticationExtensions\\AuthenticationExtensionsClientInputs\:
-				since 4\.8\.0\. Use \{Webauthn\\AuthenticationExtensions\\AuthenticationExtensions\} instead\.$#
-			'''
-			identifier: new.deprecated
-			count: 2
-			path: src/WebAuthn/WebauthnLibServer.php
-
-		-
-			message: '''
 				#^Instantiation of deprecated class Webauthn\\TokenBinding\\IgnoreTokenBindingHandler\:
 				Since 4\.3\.0 and will be removed in 5\.0\.0$#
 			'''
-			identifier: new.deprecated
+			identifier: new.deprecatedClass
 			count: 2
 			path: src/WebAuthn/WebauthnLibServer.php
 
@@ -16951,6 +16327,12 @@ parameters:
 			path: tests/unit/Advisory/RulesTest.php
 
 		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertContainsOnlyString\(\) with array\{id\: non\-empty\-string, name\: string, precondition\?\: non\-empty\-string, formula\: non\-empty\-string, test\: non\-empty\-string, issue\: string, recommendation\: string, justification\: string, \.\.\.\} will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: tests/unit/Advisory/RulesTest.php
+
+		-
 			message: '''
 				#^Call to deprecated method getInstance\(\) of class PhpMyAdmin\\Config\:
 				Use dependency injection instead\.$#
@@ -16991,6 +16373,12 @@ parameters:
 			identifier: phpunit.callParent
 			count: 1
 			path: tests/unit/CacheTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertContainsOnlyArray\(\) with non\-empty\-array\<string, array\<string, PhpMyAdmin\\Charsets\\Collation\>\> will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 3
+			path: tests/unit/CharsetsTest.php
 
 		-
 			message: '#^Class PhpMyAdmin\\Tests\\Command\\SetVersionCommandTest has an uninitialized property \$command\. Give it default value or assign it in the constructor\.$#'
@@ -17105,12 +16493,6 @@ parameters:
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
 			path: tests/unit/Config/FormDisplayTest.php
-
-		-
-			message: '#^Offset 1 might not exist on array\{0\?\: string, 1\?\: numeric\-string\}\.$#'
-			identifier: offsetAccess.notFound
-			count: 1
-			path: tests/unit/Config/FormTest.php
 
 		-
 			message: '''
@@ -17472,7 +16854,7 @@ parameters:
 				Use dependency injection instead\.$#
 			'''
 			identifier: staticMethod.deprecated
-			count: 3
+			count: 6
 			path: tests/unit/Controllers/Database/StructureControllerTest.php
 
 		-
@@ -17589,7 +16971,7 @@ parameters:
 				Use dependency injection instead\.$#
 			'''
 			identifier: staticMethod.deprecated
-			count: 2
+			count: 1
 			path: tests/unit/Controllers/Import/ImportControllerTest.php
 
 		-
@@ -17655,7 +17037,7 @@ parameters:
 				Use dependency injection instead\.$#
 			'''
 			identifier: staticMethod.deprecated
-			count: 1
+			count: 2
 			path: tests/unit/Controllers/Server/BinlogControllerTest.php
 
 		-
@@ -17673,7 +17055,7 @@ parameters:
 				Use dependency injection instead\.$#
 			'''
 			identifier: staticMethod.deprecated
-			count: 1
+			count: 2
 			path: tests/unit/Controllers/Server/CollationsControllerTest.php
 
 		-
@@ -18171,7 +17553,7 @@ parameters:
 				Use dependency injection instead\.$#
 			'''
 			identifier: staticMethod.deprecated
-			count: 1
+			count: 2
 			path: tests/unit/Controllers/Table/IndexesControllerTest.php
 
 		-
@@ -18198,7 +17580,7 @@ parameters:
 				Use dependency injection instead\.$#
 			'''
 			identifier: staticMethod.deprecated
-			count: 1
+			count: 5
 			path: tests/unit/Controllers/Table/RelationControllerTest.php
 
 		-
@@ -18207,7 +17589,7 @@ parameters:
 				Use dependency injection instead\.$#
 			'''
 			identifier: staticMethod.deprecated
-			count: 3
+			count: 2
 			path: tests/unit/Controllers/Table/ReplaceControllerTest.php
 
 		-
@@ -18307,6 +17689,12 @@ parameters:
 			path: tests/unit/CoreTest.php
 
 		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertSame\(\) with array\{pos\: ''0'', db\: ''test_db'', table\: ''test_table''\} and array\{pos\: ''0'', eq\: string\} will always evaluate to false\.$#'
+			identifier: staticMethod.impossibleType
+			count: 2
+			path: tests/unit/CoreTest.php
+
+		-
 			message: '#^Cannot access offset ''arr1'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 5
@@ -18358,6 +17746,18 @@ parameters:
 			'''
 			identifier: staticMethod.deprecated
 			count: 4
+			path: tests/unit/Crypto/CryptoTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertArrayHasKey\(\) with ''URLQueryEncryptionS…'' and array\{URLQueryEncryptionSecretKey\: ''aaaaaaaaaaaaaaaaaaa…''\} will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: tests/unit/Crypto/CryptoTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertArrayHasKey\(\) with ''URLQueryEncryptionS…'' and array\{\} will always evaluate to false\.$#'
+			identifier: staticMethod.impossibleType
+			count: 1
 			path: tests/unit/Crypto/CryptoTest.php
 
 		-
@@ -18549,23 +17949,11 @@ parameters:
 		-
 			message: '#^Cannot access offset ''display_binary'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
-			count: 4
-			path: tests/unit/Display/ResultsTest.php
-
-		-
-			message: '#^Cannot access offset ''display_blob'' on mixed\.$#'
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 4
-			path: tests/unit/Display/ResultsTest.php
-
-		-
-			message: '#^Cannot access offset ''geoOption'' on mixed\.$#'
-			identifier: offsetAccess.nonOffsetAccessible
 			count: 2
 			path: tests/unit/Display/ResultsTest.php
 
 		-
-			message: '#^Cannot access offset ''hide_transformation'' on mixed\.$#'
+			message: '#^Cannot access offset ''display_blob'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 2
 			path: tests/unit/Display/ResultsTest.php
@@ -18573,41 +17961,23 @@ parameters:
 		-
 			message: '#^Cannot access offset ''max_rows'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
-			count: 6
+			count: 4
 			path: tests/unit/Display/ResultsTest.php
 
 		-
 			message: '#^Cannot access offset ''pftext'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
-			count: 4
+			count: 2
 			path: tests/unit/Display/ResultsTest.php
 
 		-
 			message: '#^Cannot access offset ''pos'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
-			count: 3
-			path: tests/unit/Display/ResultsTest.php
-
-		-
-			message: '#^Cannot access offset ''possible_as_geometry'' on mixed\.$#'
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 2
-			path: tests/unit/Display/ResultsTest.php
-
-		-
-			message: '#^Cannot access offset ''query'' on mixed\.$#'
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 2
+			count: 1
 			path: tests/unit/Display/ResultsTest.php
 
 		-
 			message: '#^Cannot access offset ''relational_display'' on mixed\.$#'
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 4
-			path: tests/unit/Display/ResultsTest.php
-
-		-
-			message: '#^Cannot access offset ''repeat_cells'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 2
 			path: tests/unit/Display/ResultsTest.php
@@ -18710,6 +18080,12 @@ parameters:
 			identifier: staticMethod.deprecated
 			count: 3
 			path: tests/unit/FileListingTest.php
+
+		-
+			message: '#^Offset ''FlashMessenger'' does not exist on array\<mixed, mixed\>\.$#'
+			identifier: offsetAccess.notFound
+			count: 2
+			path: tests/unit/FlashMessengerTest.php
 
 		-
 			message: '#^@readonly property PhpMyAdmin\\Config\\Settings\\Debug\:\:\$sql is assigned outside of its declaring class\.$#'
@@ -18841,9 +18217,15 @@ parameters:
 			path: tests/unit/GitTest.php
 
 		-
-			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertNotNull\(\) with array\{hash\: string, branch\: string\|false, message\: string, author\: array\{name\: string, email\: string, date\: string\}, committer\: array\{name\: string, email\: string, date\: string\}, is_remote_commit\: bool, is_remote_branch\: bool\} will always evaluate to true\.$#'
-			identifier: staticMethod.alreadyNarrowedType
-			count: 1
+			message: '#^Cannot unset offset ''git_location'' on array\<mixed, mixed\>\.$#'
+			identifier: unset.offset
+			count: 2
+			path: tests/unit/GitTest.php
+
+		-
+			message: '#^Cannot unset offset ''is_git_revision'' on array\<mixed, mixed\>\.$#'
+			identifier: unset.offset
+			count: 2
 			path: tests/unit/GitTest.php
 
 		-
@@ -18937,6 +18319,18 @@ parameters:
 			path: tests/unit/Html/MySQLDocumentationTest.php
 
 		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertArrayHasKey\(\) with ''test'' and array\{test\: ''test''\} will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: tests/unit/Http/Middleware/TokenRequestParamCheckingTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertSame\(\) with ''test'' and ''test'' will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: tests/unit/Http/Middleware/TokenRequestParamCheckingTest.php
+
+		-
 			message: '#^Binary operation "\." between mixed and ''/'' results in an error\.$#'
 			identifier: binaryOp.invalid
 			count: 1
@@ -18973,13 +18367,13 @@ parameters:
 			message: '#^Cannot access an offset on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 3
-			path: tests/unit/IndexTest.php
+			path: tests/unit/Indexes/IndexTest.php
 
 		-
-			message: '#^Parameter \#1 \$columns of method PhpMyAdmin\\Index\:\:addColumns\(\) expects array\<mixed\>, mixed given\.$#'
+			message: '#^Parameter \#1 \$columns of method PhpMyAdmin\\Indexes\\Index\:\:addColumns\(\) expects array\<mixed\>, mixed given\.$#'
 			identifier: argument.type
 			count: 2
-			path: tests/unit/IndexTest.php
+			path: tests/unit/Indexes/IndexTest.php
 
 		-
 			message: '''
@@ -19375,6 +18769,12 @@ parameters:
 			path: tests/unit/Plugins/Auth/AuthenticationCookieTest.php
 
 		-
+			message: '#^Offset non\-falsy\-string does not exist on array\{\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: tests/unit/Plugins/Auth/AuthenticationCookieTest.php
+
+		-
 			message: '#^Property PhpMyAdmin\\Config\:\:\$selectedServer \(array\{host\: string, port\: string, socket\: string, ssl\: bool, ssl_key\: string\|null, ssl_cert\: string\|null, ssl_ca\: string\|null, ssl_ca_path\: string\|null, \.\.\.\}\) does not accept array\{auth_type\: ''cookie''\}\.$#'
 			identifier: assign.propertyType
 			count: 1
@@ -19432,6 +18832,12 @@ parameters:
 			'''
 			identifier: staticMethod.deprecated
 			count: 13
+			path: tests/unit/Plugins/Auth/AuthenticationSignonTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertSame\(\) with ''https\://example\.com…'' and ''https\://example\.com…'' will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
 			path: tests/unit/Plugins/Auth/AuthenticationSignonTest.php
 
 		-
@@ -19531,6 +18937,12 @@ parameters:
 			path: tests/unit/Plugins/Export/ExportSqlTest.php
 
 		-
+			message: '#^Parameter \#2 \$haystack of static method PHPUnit\\Framework\\Assert\:\:assertStringContainsString\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 3
+			path: tests/unit/Plugins/Export/ExportSqlTest.php
+
+		-
 			message: '#^Property PhpMyAdmin\\Config\:\:\$selectedServer \(array\{host\: string, port\: string, socket\: string, ssl\: bool, ssl_key\: string\|null, ssl_cert\: string\|null, ssl_ca\: string\|null, ssl_ca_path\: string\|null, \.\.\.\}\) does not accept array\{host\: string, port\: 80, socket\: string, ssl\: bool, ssl_key\: string\|null, ssl_cert\: string\|null, ssl_ca\: string\|null, ssl_ca_path\: string\|null, \.\.\.\}\.$#'
 			identifier: assign.propertyType
 			count: 1
@@ -19567,12 +18979,6 @@ parameters:
 			'''
 			identifier: staticMethod.deprecated
 			count: 2
-			path: tests/unit/Plugins/Import/ImportLdiTest.php
-
-		-
-			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertTrue\(\) with ''auto'' will always evaluate to false\.$#'
-			identifier: staticMethod.impossibleType
-			count: 1
 			path: tests/unit/Plugins/Import/ImportLdiTest.php
 
 		-
@@ -19821,7 +19227,7 @@ parameters:
 		-
 			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertIsString\(\) with null will always evaluate to false\.$#'
 			identifier: staticMethod.impossibleType
-			count: 1
+			count: 2
 			path: tests/unit/SessionTest.php
 
 		-
@@ -19834,6 +19240,12 @@ parameters:
 			path: tests/unit/Setup/IndexTest.php
 
 		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertSame\(\) with array\{array\{array\{0\: ''foo'', fresh\: false, active\: false\}, array\{0\: ''bar'', fresh\: false, active\: false\}\}\} and array\{array\{array\{''foo''\}, array\{''bar''\}\}\} will always evaluate to false\.$#'
+			identifier: staticMethod.impossibleType
+			count: 1
+			path: tests/unit/Setup/IndexTest.php
+
+		-
 			message: '#^Cannot access offset ''123'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
@@ -19842,6 +19254,12 @@ parameters:
 		-
 			message: '#^Cannot access offset ''type'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: tests/unit/Setup/IndexTest.php
+
+		-
+			message: '#^Offset ''messages'' does not exist on array\<mixed, mixed\>\.$#'
+			identifier: offsetAccess.notFound
 			count: 1
 			path: tests/unit/Setup/IndexTest.php
 
@@ -20059,6 +19477,12 @@ parameters:
 			path: tests/unit/TwoFactorTest.php
 
 		-
+			message: '#^Cannot unset offset ''2fa_code'' on array\<mixed, mixed\>\.$#'
+			identifier: unset.offset
+			count: 1
+			path: tests/unit/TwoFactorTest.php
+
+		-
 			message: '#^Method PhpMyAdmin\\Tests\\TwoFactorTest\:\:loadResultForConfig\(\) has parameter \$config with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
@@ -20137,9 +19561,15 @@ parameters:
 			path: tests/unit/UserPreferencesTest.php
 
 		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertTrue\(\) with false will always evaluate to false\.$#'
+			identifier: staticMethod.impossibleType
+			count: 1
+			path: tests/unit/UserPreferencesTest.php
+
+		-
 			message: '#^Cannot access offset ''db'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
-			count: 2
+			count: 1
 			path: tests/unit/UserPreferencesTest.php
 
 		-
@@ -20158,6 +19588,12 @@ parameters:
 			message: '#^Cannot access offset ''userprefs'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
+			path: tests/unit/UserPreferencesTest.php
+
+		-
+			message: '#^Offset ''userconfig'' does not exist on array\<mixed, mixed\>\.$#'
+			identifier: offsetAccess.notFound
+			count: 3
 			path: tests/unit/UserPreferencesTest.php
 
 		-
@@ -20278,6 +19714,12 @@ parameters:
 			path: tests/unit/Utils/SessionCacheTest.php
 
 		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertArrayHasKey\(\) with ''cache'' and array\{\} will always evaluate to false\.$#'
+			identifier: staticMethod.impossibleType
+			count: 2
+			path: tests/unit/Utils/SessionCacheTest.php
+
+		-
 			message: '#^Cannot access offset ''server_2'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 4
@@ -20293,6 +19735,12 @@ parameters:
 			message: '#^Cannot access offset ''test_data_3'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
+			path: tests/unit/Utils/SessionCacheTest.php
+
+		-
+			message: '#^Offset ''cache'' does not exist on array\{\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 4
 			path: tests/unit/Utils/SessionCacheTest.php
 
 		-

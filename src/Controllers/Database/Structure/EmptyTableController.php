@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace PhpMyAdmin\Controllers\Database\Structure;
 
-use PhpMyAdmin\Bookmarks\BookmarkRepository;
-use PhpMyAdmin\Config;
-use PhpMyAdmin\ConfigStorage\Relation;
-use PhpMyAdmin\ConfigStorage\RelationCleanup;
 use PhpMyAdmin\Controllers\Database\StructureController;
 use PhpMyAdmin\Controllers\InvocableController;
 use PhpMyAdmin\Current;
@@ -19,23 +15,19 @@ use PhpMyAdmin\Message;
 use PhpMyAdmin\ResponseRenderer;
 use PhpMyAdmin\Sql;
 use PhpMyAdmin\Table\Table;
-use PhpMyAdmin\Template;
-use PhpMyAdmin\Transformations;
 use PhpMyAdmin\Util;
 use PhpMyAdmin\Utils\ForeignKey;
 
 use function __;
 
-final class EmptyTableController implements InvocableController
+final readonly class EmptyTableController implements InvocableController
 {
     public function __construct(
-        private readonly ResponseRenderer $response,
-        private readonly Template $template,
-        private readonly DatabaseInterface $dbi,
-        private readonly Relation $relation,
-        private readonly RelationCleanup $relationCleanup,
-        private readonly FlashMessenger $flashMessenger,
-        private readonly StructureController $structureController,
+        private ResponseRenderer $response,
+        private DatabaseInterface $dbi,
+        private FlashMessenger $flashMessenger,
+        private StructureController $structureController,
+        private Sql $sql,
     ) {
     }
 
@@ -71,17 +63,11 @@ final class EmptyTableController implements InvocableController
         }
 
         if (! empty($_REQUEST['pos'])) {
-            $sql = new Sql(
-                $this->dbi,
-                $this->relation,
-                $this->relationCleanup,
-                new Transformations(),
-                $this->template,
-                new BookmarkRepository($this->dbi, $this->relation),
-                Config::getInstance(),
+            $_REQUEST['pos'] = $this->sql->calculatePosForLastPage(
+                Current::$database,
+                Current::$table,
+                $_REQUEST['pos'],
             );
-
-            $_REQUEST['pos'] = $sql->calculatePosForLastPage(Current::$database, Current::$table, $_REQUEST['pos']);
         }
 
         ForeignKey::handleDisableCheckCleanup($defaultFkCheckValue);

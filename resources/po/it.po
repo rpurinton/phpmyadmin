@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpMyAdmin 6.0.0-dev\n"
 "Report-Msgid-Bugs-To: translators@phpmyadmin.net\n"
-"POT-Creation-Date: 2025-05-18 00:29+0000\n"
+"POT-Creation-Date: 2025-06-01 00:34+0000\n"
 "PO-Revision-Date: 2025-01-20 13:00+0000\n"
 "Last-Translator: Matteo Regazzi <mregazzi@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/phpmyadmin/"
@@ -138,7 +138,7 @@ msgstr ""
 #: resources/templates/table/structure/display_structure.twig:143
 #: resources/templates/table/structure/display_structure.twig:284
 #: resources/templates/table/tracking/structure_snapshot_columns.twig:25
-#: src/Controllers/Table/StructureController.php:216
+#: src/Controllers/Table/StructureController.php:217
 msgid "Primary"
 msgstr "Primaria"
 
@@ -160,7 +160,7 @@ msgstr "Unica"
 #: resources/templates/table/structure/display_structure.twig:290
 #: resources/templates/table/structure/display_table_stats.twig:24
 #: resources/templates/table/tracking/structure_snapshot_columns.twig:27
-#: src/Controllers/Table/StructureController.php:220
+#: src/Controllers/Table/StructureController.php:221
 #: src/Navigation/Nodes/NodeIndex.php:24
 msgid "Index"
 msgstr "Indice"
@@ -2841,8 +2841,8 @@ msgstr "Viste"
 #: resources/templates/database/structure/structure_table_row.twig:122
 #: resources/templates/database/structure/structure_table_row.twig:186
 #: src/Controllers/Operations/TableController.php:120
-#: src/Controllers/Operations/TableController.php:321
-#: src/Controllers/Table/StructureController.php:150
+#: src/Controllers/Operations/TableController.php:316
+#: src/Controllers/Table/StructureController.php:151
 #: src/Navigation/Nodes/NodeView.php:24
 msgid "View"
 msgstr "Vista"
@@ -3164,7 +3164,7 @@ msgstr "Converti a Kana"
 #: src/Controllers/Table/Partition/DropController.php:54
 #: src/Controllers/Table/Partition/RebuildController.php:54
 #: src/Controllers/Table/Partition/TruncateController.php:54
-#: src/Html/Generator.php:739 src/Import/Import.php:119 src/InsertEdit.php:456
+#: src/Html/Generator.php:739 src/Import/Import.php:119 src/InsertEdit.php:424
 #: src/Message.php:138
 msgid "Error"
 msgstr "Errore"
@@ -3712,7 +3712,7 @@ msgid "You may also drag and drop a file on any page."
 msgstr "Puoi anche trascinare e rilasciare un file su qualsiasi pagina."
 
 #: resources/templates/import.twig:56 resources/templates/import.twig:80
-#: src/InsertEdit.php:457
+#: src/InsertEdit.php:425
 msgid "The directory you set for upload work cannot be reached."
 msgstr "La directory impostata per l'upload non può essere trovata."
 
@@ -4266,7 +4266,7 @@ msgstr "Hai abilitato l'autenticazione a due fattori."
 #: resources/templates/preview_sql.twig:3
 #: src/Controllers/Database/Structure/DropTableController.php:42
 #: src/Controllers/Database/Structure/EmptyTableController.php:41
-#: src/Controllers/Operations/TableController.php:337
+#: src/Controllers/Operations/TableController.php:332
 #: src/Controllers/Table/DropColumnController.php:61
 #: src/Controllers/Table/ReplaceController.php:287 src/Core.php:516
 msgid "No change"
@@ -4954,7 +4954,7 @@ msgstr "Permette di leggere i dati."
 #: resources/templates/server/privileges/privileges_table.twig:60
 #: resources/templates/server/privileges/privileges_table.twig:87
 #: resources/templates/server/privileges/privileges_table.twig:114
-#: resources/templates/table/search/index.twig:128 src/InsertEdit.php:465
+#: resources/templates/table/search/index.twig:128 src/InsertEdit.php:433
 msgid "Or"
 msgstr "Oppure"
 
@@ -6471,7 +6471,7 @@ msgstr "Grafico a torta con i risultati del profiling."
 #: src/Controllers/Table/Partition/RebuildController.php:48
 #: src/Controllers/Table/Partition/RepairController.php:47
 #: src/Controllers/Table/Partition/TruncateController.php:48
-#: src/Controllers/Table/RelationController.php:140
+#: src/Controllers/Table/RelationController.php:141
 #: src/Database/Routines.php:1023 src/Display/Results.php:3013
 #: src/Message.php:122
 msgid "Your SQL query has been executed successfully."
@@ -6781,7 +6781,7 @@ msgstr "Trascina per riordinare"
 #: resources/templates/table/index_form.twig:203
 #: src/Controllers/JavaScriptMessagesController.php:463
 #: src/Controllers/JavaScriptMessagesController.php:615
-#: src/Error/ErrorHandler.php:426 src/InsertEdit.php:1465
+#: src/Error/ErrorHandler.php:426 src/InsertEdit.php:1440
 msgid "Ignore"
 msgstr "Ignora"
 
@@ -6848,7 +6848,7 @@ msgstr ""
 msgid "Binary - do not edit"
 msgstr "Dato binario - non modificare"
 
-#: resources/templates/table/insert/column_row.twig:120
+#: resources/templates/table/insert/column_row.twig:123
 #: resources/templates/table/search/input_box.twig:32
 msgid "Edit/Insert"
 msgstr "Modifica/Inserisci"
@@ -11791,7 +11791,7 @@ msgstr "Collation della connessione del server"
 msgid "Missing data for %s"
 msgstr "Dati mancanti per %s"
 
-#: src/Config/FormDisplay.php:619 src/Config/Validator.php:595
+#: src/Config/FormDisplay.php:619 src/Config/Validator.php:593
 #: src/Controllers/JavaScriptMessagesController.php:802
 msgid "Incorrect value!"
 msgstr "Valore non corretto!"
@@ -12031,11 +12031,11 @@ msgstr ""
 msgid "Server %d"
 msgstr "Server %d"
 
-#: src/ConfigStorage/Relation.php:1250
+#: src/ConfigStorage/Relation.php:1116
 msgid "no description"
 msgstr "nessuna descrizione"
 
-#: src/ConfigStorage/Relation.php:1456
+#: src/ConfigStorage/Relation.php:1322
 #, php-format
 msgid ""
 "You do not have necessary privileges to create a database named '%s'. You "
@@ -12062,21 +12062,21 @@ msgstr "Tabulazioni livello database"
 msgid "Table-level tabs"
 msgstr "Tabulazioni livello tabella"
 
-#: src/Config/Validator.php:253
+#: src/Config/Validator.php:251
 msgid "Could not connect to the database server!"
 msgstr "Impossibile connettersi al server del database!"
 
-#: src/Config/Validator.php:289
+#: src/Config/Validator.php:287
 msgid "Invalid authentication type!"
 msgstr "Tipo di autenticazione non valido!"
 
-#: src/Config/Validator.php:294
+#: src/Config/Validator.php:292
 msgid "Empty username while using [kbd]config[/kbd] authentication method!"
 msgstr ""
 "Rimuovi il nome utente durante l'utilizzo del metodo di autenticazione "
 "[kbd]config[/kbd]!"
 
-#: src/Config/Validator.php:300
+#: src/Config/Validator.php:298
 msgid ""
 "Empty signon session name while using [kbd]signon[/kbd] authentication "
 "method!"
@@ -12084,20 +12084,20 @@ msgstr ""
 "Rimuovi il nome della sessione signon durante l'utilizzo del metodo di "
 "autenticazione [kbd]signon[/kbd]!"
 
-#: src/Config/Validator.php:307
+#: src/Config/Validator.php:305
 msgid "Empty signon URL while using [kbd]signon[/kbd] authentication method!"
 msgstr ""
 "Rimuovi l'URL di signon durante l'utilizzo del metodo di autenticazione "
 "[kbd]signon[/kbd]!"
 
-#: src/Config/Validator.php:360
+#: src/Config/Validator.php:358
 msgid ""
 "Empty phpMyAdmin control user while using phpMyAdmin configuration storage!"
 msgstr ""
 "Rimuovi l'utente di controllo di phpMyAdmin durante l'utilizzo di phpMyAdmin "
 "configuration storage!"
 
-#: src/Config/Validator.php:367
+#: src/Config/Validator.php:365
 msgid ""
 "Empty phpMyAdmin control user password while using phpMyAdmin configuration "
 "storage!"
@@ -12105,44 +12105,44 @@ msgstr ""
 "Rimuovi la password dell'utente di controllo di phpMyAdmin durante "
 "l'utilizzo di phpMyAdmin configuration storage!"
 
-#: src/Config/Validator.php:456
+#: src/Config/Validator.php:454
 msgid "Incorrect value:"
 msgstr "Valore non corretto:"
 
-#: src/Config/Validator.php:467
+#: src/Config/Validator.php:465
 #, php-format
 msgid "Incorrect IP address: %s"
 msgstr "Indirizzo IP non corretto: %s"
 
-#: src/Config/Validator.php:530
+#: src/Config/Validator.php:528
 #: src/Controllers/JavaScriptMessagesController.php:801
 msgid "Not a valid port number!"
 msgstr "Numero della porta non valido!"
 
-#: src/Config/Validator.php:552
+#: src/Config/Validator.php:550
 #: src/Controllers/JavaScriptMessagesController.php:799
 msgid "Not a positive number!"
 msgstr "Non è un numero positivo!"
 
-#: src/Config/Validator.php:574
+#: src/Config/Validator.php:572
 #: src/Controllers/JavaScriptMessagesController.php:800
 msgid "Not a non-negative number!"
 msgstr "Non è un numero non negativo!"
 
-#: src/Config/Validator.php:613
+#: src/Config/Validator.php:611
 #: src/Controllers/JavaScriptMessagesController.php:803
 #, php-format
 msgid "Value must be less than or equal to %s!"
 msgstr "Il valore deve essere uguale o minore di %s!"
 
-#: src/Console.php:61
+#: src/Console/Console.php:64
 #, php-format
 msgid "Showing %1$d bookmark (both private and shared)"
 msgid_plural "Showing %1$d bookmarks (both private and shared)"
 msgstr[0] "Visualizzo %1$d bookmark (sia privato che condiviso)"
 msgstr[1] "Visualizzo %1$d bookmark (sia privati che condivisi)"
 
-#: src/Console.php:68
+#: src/Console/Console.php:71
 msgid "No bookmarks"
 msgstr "Nessun segnalibro"
 
@@ -12246,8 +12246,8 @@ msgstr "Esiste già una pagina chiamata \"%s\" per favore scegli un altro nome."
 #: src/Controllers/Table/SearchController.php:177
 #: src/Controllers/Table/SqlController.php:57
 #: src/Controllers/Table/SqlController.php:62
-#: src/Controllers/Table/StructureController.php:90
-#: src/Controllers/Table/StructureController.php:95
+#: src/Controllers/Table/StructureController.php:91
+#: src/Controllers/Table/StructureController.php:96
 #: src/Controllers/Table/Structure/PrimaryController.php:67
 #: src/Controllers/Table/Structure/PrimaryController.php:72
 #: src/Controllers/Table/TrackingController.php:66
@@ -12368,8 +12368,8 @@ msgstr "Non hai le autorizzazioni per amministrare i dati degli utenti!"
 #: src/Controllers/Table/SearchController.php:191
 #: src/Controllers/Table/SqlController.php:71
 #: src/Controllers/Table/SqlController.php:76
-#: src/Controllers/Table/StructureController.php:104
-#: src/Controllers/Table/StructureController.php:109
+#: src/Controllers/Table/StructureController.php:105
+#: src/Controllers/Table/StructureController.php:110
 #: src/Controllers/Table/Structure/PrimaryController.php:81
 #: src/Controllers/Table/Structure/PrimaryController.php:86
 #: src/Controllers/Table/ZoomSearchController.php:114
@@ -14646,7 +14646,7 @@ msgid "String"
 msgstr "Stringa"
 
 #: src/Controllers/Operations/Database/CollationController.php:40
-#: src/Controllers/Operations/TableController.php:270
+#: src/Controllers/Operations/TableController.php:265
 msgid "No collation provided."
 msgstr "Nessuna collazione disponibile."
 
@@ -14695,7 +14695,7 @@ msgstr "L'autenticazione a due fattori è stata configurata."
 
 #: src/Controllers/SchemaExportController.php:38
 #: src/Controllers/Server/UserGroupsFormController.php:44
-#: src/ResponseRenderer.php:447
+#: src/ResponseRenderer.php:448
 msgid "Missing parameter:"
 msgstr "Parametro mancante:"
 
@@ -15637,11 +15637,11 @@ msgstr "Il nome della partizione deve essere una stringa non vuota."
 msgid "Invalid database or table name."
 msgstr "Nome del database o della tabella non valido."
 
-#: src/Controllers/Table/RelationController.php:317
+#: src/Controllers/Table/RelationController.php:314
 msgid "Display column was successfully updated."
 msgstr "Il campo display è stato aggiornato con successo."
 
-#: src/Controllers/Table/RelationController.php:351
+#: src/Controllers/Table/RelationController.php:348
 msgid "Internal relationships were successfully updated."
 msgstr "Le relazioni interne sono state aggiornate con successo."
 
@@ -16727,15 +16727,15 @@ msgstr ""
 "Sembra che gli indici %1$s e %2$s sono uguali ed uno di questi potrebbe, "
 "possibilmente, essere rimosso."
 
-#: src/InsertEdit.php:466
+#: src/InsertEdit.php:434
 msgid "web server upload directory:"
 msgstr "directory di upload del web-server:"
 
-#: src/InsertEdit.php:883 src/Sql.php:861
+#: src/InsertEdit.php:858 src/Sql.php:861
 msgid "Showing SQL query"
 msgstr "Visualizzo la query SQL"
 
-#: src/InsertEdit.php:907 src/Sql.php:841
+#: src/InsertEdit.php:882 src/Sql.php:841
 #, php-format
 msgid "Inserted row id: %1$d"
 msgstr "Inserita riga id: %1$d"
@@ -18720,7 +18720,7 @@ msgstr ""
 "saranno mantenuti se ricaricate questa pagina. Controllate se la struttura "
 "della tabella è cambiata."
 
-#: src/Table/Table.php:1572
+#: src/Table/Table.php:1576
 #, php-format
 msgid "Error creating foreign key on %1$s (check data types)"
 msgstr "Errore nel creare una foreign key su %1$s (controlla il tipo di dati)"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpMyAdmin 6.0.0-dev\n"
 "Report-Msgid-Bugs-To: translators@phpmyadmin.net\n"
-"POT-Creation-Date: 2025-05-18 00:29+0000\n"
+"POT-Creation-Date: 2025-06-01 00:34+0000\n"
 "PO-Revision-Date: 2025-05-14 19:50+0000\n"
 "Last-Translator: Xuan Hung <mr.hungdx@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/phpmyadmin/"
@@ -135,7 +135,7 @@ msgstr ""
 #: resources/templates/table/structure/display_structure.twig:143
 #: resources/templates/table/structure/display_structure.twig:284
 #: resources/templates/table/tracking/structure_snapshot_columns.twig:25
-#: src/Controllers/Table/StructureController.php:216
+#: src/Controllers/Table/StructureController.php:217
 msgid "Primary"
 msgstr "Chính"
 
@@ -157,7 +157,7 @@ msgstr "Duy nhất"
 #: resources/templates/table/structure/display_structure.twig:290
 #: resources/templates/table/structure/display_table_stats.twig:24
 #: resources/templates/table/tracking/structure_snapshot_columns.twig:27
-#: src/Controllers/Table/StructureController.php:220
+#: src/Controllers/Table/StructureController.php:221
 #: src/Navigation/Nodes/NodeIndex.php:24
 msgid "Index"
 msgstr "Chỉ mục"
@@ -2821,8 +2821,8 @@ msgstr "Trình bày"
 #: resources/templates/database/structure/structure_table_row.twig:122
 #: resources/templates/database/structure/structure_table_row.twig:186
 #: src/Controllers/Operations/TableController.php:120
-#: src/Controllers/Operations/TableController.php:321
-#: src/Controllers/Table/StructureController.php:150
+#: src/Controllers/Operations/TableController.php:316
+#: src/Controllers/Table/StructureController.php:151
 #: src/Navigation/Nodes/NodeView.php:24
 msgid "View"
 msgstr "View"
@@ -3143,7 +3143,7 @@ msgstr "Chuyển đổi sang Kana"
 #: src/Controllers/Table/Partition/DropController.php:54
 #: src/Controllers/Table/Partition/RebuildController.php:54
 #: src/Controllers/Table/Partition/TruncateController.php:54
-#: src/Html/Generator.php:739 src/Import/Import.php:119 src/InsertEdit.php:456
+#: src/Html/Generator.php:739 src/Import/Import.php:119 src/InsertEdit.php:424
 #: src/Message.php:138
 msgid "Error"
 msgstr "Lỗi"
@@ -3685,7 +3685,7 @@ msgid "You may also drag and drop a file on any page."
 msgstr "Bạn cũng có thể kéo thả một tập tin trên bất kỳ trang nào."
 
 #: resources/templates/import.twig:56 resources/templates/import.twig:80
-#: src/InsertEdit.php:457
+#: src/InsertEdit.php:425
 msgid "The directory you set for upload work cannot be reached."
 msgstr "Thư mục bạn đặt cho việc tải lên không thể tiếp cận được."
 
@@ -4226,7 +4226,7 @@ msgstr "Bạn đã kích hoạt xác thực hai yếu tố."
 #: resources/templates/preview_sql.twig:3
 #: src/Controllers/Database/Structure/DropTableController.php:42
 #: src/Controllers/Database/Structure/EmptyTableController.php:41
-#: src/Controllers/Operations/TableController.php:337
+#: src/Controllers/Operations/TableController.php:332
 #: src/Controllers/Table/DropColumnController.php:61
 #: src/Controllers/Table/ReplaceController.php:287 src/Core.php:516
 msgid "No change"
@@ -4927,7 +4927,7 @@ msgstr "Cho phép đọc dữ liệu."
 #: resources/templates/server/privileges/privileges_table.twig:60
 #: resources/templates/server/privileges/privileges_table.twig:87
 #: resources/templates/server/privileges/privileges_table.twig:114
-#: resources/templates/table/search/index.twig:128 src/InsertEdit.php:465
+#: resources/templates/table/search/index.twig:128 src/InsertEdit.php:433
 msgid "Or"
 msgstr "Hoặc"
 
@@ -6468,7 +6468,7 @@ msgstr "Không có kết quả"
 #: src/Controllers/Table/Partition/RebuildController.php:48
 #: src/Controllers/Table/Partition/RepairController.php:47
 #: src/Controllers/Table/Partition/TruncateController.php:48
-#: src/Controllers/Table/RelationController.php:140
+#: src/Controllers/Table/RelationController.php:141
 #: src/Database/Routines.php:1023 src/Display/Results.php:3013
 #: src/Message.php:122
 msgid "Your SQL query has been executed successfully."
@@ -6781,7 +6781,7 @@ msgstr "Kéo thả để thay đổi thứ tự"
 #: resources/templates/table/index_form.twig:203
 #: src/Controllers/JavaScriptMessagesController.php:463
 #: src/Controllers/JavaScriptMessagesController.php:615
-#: src/Error/ErrorHandler.php:426 src/InsertEdit.php:1465
+#: src/Error/ErrorHandler.php:426 src/InsertEdit.php:1440
 msgid "Ignore"
 msgstr "Bỏ qua"
 
@@ -6846,7 +6846,7 @@ msgstr "Bởi vì chiều dài của nó,<br> cột này có thể không sửa 
 msgid "Binary - do not edit"
 msgstr "Nhị phân (Binary) - đừng sửa"
 
-#: resources/templates/table/insert/column_row.twig:120
+#: resources/templates/table/insert/column_row.twig:123
 #: resources/templates/table/search/input_box.twig:32
 msgid "Edit/Insert"
 msgstr "Sửa/Chèn"
@@ -11747,7 +11747,7 @@ msgstr "Bảng mã đối chiếu kết nối máy dịch vụ"
 msgid "Missing data for %s"
 msgstr "Thiếu dữ liệu cho %s"
 
-#: src/Config/FormDisplay.php:619 src/Config/Validator.php:595
+#: src/Config/FormDisplay.php:619 src/Config/Validator.php:593
 #: src/Controllers/JavaScriptMessagesController.php:802
 msgid "Incorrect value!"
 msgstr "Giá trị không đúng!"
@@ -11959,11 +11959,11 @@ msgstr ""
 msgid "Server %d"
 msgstr "Máy chủ %d"
 
-#: src/ConfigStorage/Relation.php:1250
+#: src/ConfigStorage/Relation.php:1116
 msgid "no description"
 msgstr "không có mô tả"
 
-#: src/ConfigStorage/Relation.php:1456
+#: src/ConfigStorage/Relation.php:1322
 #, php-format
 msgid ""
 "You do not have necessary privileges to create a database named '%s'. You "
@@ -11987,78 +11987,78 @@ msgstr "Tab mức-cơ-sở-dữ-liệu"
 msgid "Table-level tabs"
 msgstr "Tab mức-bảng"
 
-#: src/Config/Validator.php:253
+#: src/Config/Validator.php:251
 msgid "Could not connect to the database server!"
 msgstr "Không thể kết nối đến máy chủ phục vụ cơ sở dữ liệu!"
 
-#: src/Config/Validator.php:289
+#: src/Config/Validator.php:287
 #, fuzzy
 #| msgid "Authentication type"
 msgid "Invalid authentication type!"
 msgstr "Kiểu xác thực"
 
-#: src/Config/Validator.php:294
+#: src/Config/Validator.php:292
 msgid "Empty username while using [kbd]config[/kbd] authentication method!"
 msgstr ""
 
-#: src/Config/Validator.php:300
+#: src/Config/Validator.php:298
 msgid ""
 "Empty signon session name while using [kbd]signon[/kbd] authentication "
 "method!"
 msgstr ""
 
-#: src/Config/Validator.php:307
+#: src/Config/Validator.php:305
 msgid "Empty signon URL while using [kbd]signon[/kbd] authentication method!"
 msgstr ""
 
-#: src/Config/Validator.php:360
+#: src/Config/Validator.php:358
 msgid ""
 "Empty phpMyAdmin control user while using phpMyAdmin configuration storage!"
 msgstr ""
 
-#: src/Config/Validator.php:367
+#: src/Config/Validator.php:365
 msgid ""
 "Empty phpMyAdmin control user password while using phpMyAdmin configuration "
 "storage!"
 msgstr ""
 
-#: src/Config/Validator.php:456
+#: src/Config/Validator.php:454
 msgid "Incorrect value:"
 msgstr "Giá trị không đúng:"
 
-#: src/Config/Validator.php:467
+#: src/Config/Validator.php:465
 #, php-format
 msgid "Incorrect IP address: %s"
 msgstr "Địa chỉ IP của không đúng: %s"
 
-#: src/Config/Validator.php:530
+#: src/Config/Validator.php:528
 #: src/Controllers/JavaScriptMessagesController.php:801
 msgid "Not a valid port number!"
 msgstr "Số hiệu cổng không hợp lệ"
 
-#: src/Config/Validator.php:552
+#: src/Config/Validator.php:550
 #: src/Controllers/JavaScriptMessagesController.php:799
 msgid "Not a positive number!"
 msgstr "không phải là số hiệu phiên bản"
 
-#: src/Config/Validator.php:574
+#: src/Config/Validator.php:572
 #: src/Controllers/JavaScriptMessagesController.php:800
 msgid "Not a non-negative number!"
 msgstr "Không là con số âm"
 
-#: src/Config/Validator.php:613
+#: src/Config/Validator.php:611
 #: src/Controllers/JavaScriptMessagesController.php:803
 #, php-format
 msgid "Value must be less than or equal to %s!"
 msgstr "Giá trị phải nhỏ hơn hoặc bằng %s"
 
-#: src/Console.php:61
+#: src/Console/Console.php:64
 #, fuzzy, php-format
 msgid "Showing %1$d bookmark (both private and shared)"
 msgid_plural "Showing %1$d bookmarks (both private and shared)"
 msgstr[0] "Hiển thị %1$d dấu trang (cả riêng tư và chia sẻ chung)"
 
-#: src/Console.php:68
+#: src/Console/Console.php:71
 msgid "No bookmarks"
 msgstr "Không có đánh dấu nào"
 
@@ -12162,8 +12162,8 @@ msgstr ""
 #: src/Controllers/Table/SearchController.php:177
 #: src/Controllers/Table/SqlController.php:57
 #: src/Controllers/Table/SqlController.php:62
-#: src/Controllers/Table/StructureController.php:90
-#: src/Controllers/Table/StructureController.php:95
+#: src/Controllers/Table/StructureController.php:91
+#: src/Controllers/Table/StructureController.php:96
 #: src/Controllers/Table/Structure/PrimaryController.php:67
 #: src/Controllers/Table/Structure/PrimaryController.php:72
 #: src/Controllers/Table/TrackingController.php:66
@@ -12285,8 +12285,8 @@ msgstr "Bạn không có đủ thẩm quyền cần thiết để tạo một b�
 #: src/Controllers/Table/SearchController.php:191
 #: src/Controllers/Table/SqlController.php:71
 #: src/Controllers/Table/SqlController.php:76
-#: src/Controllers/Table/StructureController.php:104
-#: src/Controllers/Table/StructureController.php:109
+#: src/Controllers/Table/StructureController.php:105
+#: src/Controllers/Table/StructureController.php:110
 #: src/Controllers/Table/Structure/PrimaryController.php:81
 #: src/Controllers/Table/Structure/PrimaryController.php:86
 #: src/Controllers/Table/ZoomSearchController.php:114
@@ -14633,7 +14633,7 @@ msgid "String"
 msgstr "Chuỗi"
 
 #: src/Controllers/Operations/Database/CollationController.php:40
-#: src/Controllers/Operations/TableController.php:270
+#: src/Controllers/Operations/TableController.php:265
 msgid "No collation provided."
 msgstr ""
 
@@ -14686,7 +14686,7 @@ msgstr "Phương thức xác thực trong cấu hình không hợp lệ:"
 
 #: src/Controllers/SchemaExportController.php:38
 #: src/Controllers/Server/UserGroupsFormController.php:44
-#: src/ResponseRenderer.php:447
+#: src/ResponseRenderer.php:448
 msgid "Missing parameter:"
 msgstr "Thiếu tham số:"
 
@@ -15504,11 +15504,11 @@ msgstr "Tên bảng còn để trống!"
 msgid "Invalid database or table name."
 msgstr "Tên bảng không hợp lệ"
 
-#: src/Controllers/Table/RelationController.php:317
+#: src/Controllers/Table/RelationController.php:314
 msgid "Display column was successfully updated."
 msgstr "Cột trình bày đã được cập nhật thành công."
 
-#: src/Controllers/Table/RelationController.php:351
+#: src/Controllers/Table/RelationController.php:348
 #, fuzzy
 #| msgid "Internal relations were successfully updated."
 msgid "Internal relationships were successfully updated."
@@ -16558,15 +16558,15 @@ msgstr ""
 "Các chỉ mục %1$s và %2$s dường như là giống nhau và một trong số chúng có "
 "thể gần như chắc chắn nên được xóa bỏ."
 
-#: src/InsertEdit.php:466
+#: src/InsertEdit.php:434
 msgid "web server upload directory:"
 msgstr "thư mục để tải lên máy chủ:"
 
-#: src/InsertEdit.php:883 src/Sql.php:861
+#: src/InsertEdit.php:858 src/Sql.php:861
 msgid "Showing SQL query"
 msgstr "Hiện truy vấn SQL"
 
-#: src/InsertEdit.php:907 src/Sql.php:841
+#: src/InsertEdit.php:882 src/Sql.php:841
 #, php-format
 msgid "Inserted row id: %1$d"
 msgstr "Chỉ số id người dùng kép: %1$d"
@@ -18424,7 +18424,7 @@ msgstr ""
 "không liên tục sau khi bạn làm mới trang này. Vui lòng kiểm tra xem cấu trúc "
 "bảng có bị thay đổi hay không."
 
-#: src/Table/Table.php:1572
+#: src/Table/Table.php:1576
 #, php-format
 msgid "Error creating foreign key on %1$s (check data types)"
 msgstr "Gặp lỗi khi tạo khóa ngoại trên %1$s (kiểm tra lại kiểu dữ liệu)"

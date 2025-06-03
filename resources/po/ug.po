@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpMyAdmin 6.0.0-dev\n"
 "Report-Msgid-Bugs-To: translators@phpmyadmin.net\n"
-"POT-Creation-Date: 2025-05-18 00:29+0000\n"
+"POT-Creation-Date: 2025-06-01 00:34+0000\n"
 "PO-Revision-Date: 2024-10-29 18:22+0000\n"
 "Last-Translator: Maurício Meneghini Fauth <mauricio@mfauth.net>\n"
 "Language-Team: Uyghur <https://hosted.weblate.org/projects/phpmyadmin/master/"
@@ -147,7 +147,7 @@ msgstr ""
 #: resources/templates/table/structure/display_structure.twig:143
 #: resources/templates/table/structure/display_structure.twig:284
 #: resources/templates/table/tracking/structure_snapshot_columns.twig:25
-#: src/Controllers/Table/StructureController.php:216
+#: src/Controllers/Table/StructureController.php:217
 msgid "Primary"
 msgstr "Primary"
 
@@ -169,7 +169,7 @@ msgstr "بىردىنبىر"
 #: resources/templates/table/structure/display_structure.twig:290
 #: resources/templates/table/structure/display_table_stats.twig:24
 #: resources/templates/table/tracking/structure_snapshot_columns.twig:27
-#: src/Controllers/Table/StructureController.php:220
+#: src/Controllers/Table/StructureController.php:221
 #: src/Navigation/Nodes/NodeIndex.php:24
 msgid "Index"
 msgstr "كۆرسەتكۈچ"
@@ -3168,8 +3168,8 @@ msgstr "قاراش"
 #: resources/templates/database/structure/structure_table_row.twig:122
 #: resources/templates/database/structure/structure_table_row.twig:186
 #: src/Controllers/Operations/TableController.php:120
-#: src/Controllers/Operations/TableController.php:321
-#: src/Controllers/Table/StructureController.php:150
+#: src/Controllers/Operations/TableController.php:316
+#: src/Controllers/Table/StructureController.php:151
 #: src/Navigation/Nodes/NodeView.php:24
 msgid "View"
 msgstr "قاراش"
@@ -3513,7 +3513,7 @@ msgstr "كاناغا ئۆزگەرتىڭ"
 #: src/Controllers/Table/Partition/DropController.php:54
 #: src/Controllers/Table/Partition/RebuildController.php:54
 #: src/Controllers/Table/Partition/TruncateController.php:54
-#: src/Html/Generator.php:739 src/Import/Import.php:119 src/InsertEdit.php:456
+#: src/Html/Generator.php:739 src/Import/Import.php:119 src/InsertEdit.php:424
 #: src/Message.php:138
 msgid "Error"
 msgstr "خاتالىق"
@@ -4164,7 +4164,7 @@ msgid "You may also drag and drop a file on any page."
 msgstr "ھۆججەتنى خالىغان بەتكە سۆرەپ تاشلىسىڭىزمۇ بولىدۇ."
 
 #: resources/templates/import.twig:56 resources/templates/import.twig:80
-#: src/InsertEdit.php:457
+#: src/InsertEdit.php:425
 msgid "The directory you set for upload work cannot be reached."
 msgstr "كۆرسىتىلگەن مۇندەرىجىگە يۈكلىيەلمىدى."
 
@@ -4771,7 +4771,7 @@ msgstr "ئىككى ئامىل دەلىللەشنى قوزغىتىڭ."
 #: resources/templates/preview_sql.twig:3
 #: src/Controllers/Database/Structure/DropTableController.php:42
 #: src/Controllers/Database/Structure/EmptyTableController.php:41
-#: src/Controllers/Operations/TableController.php:337
+#: src/Controllers/Operations/TableController.php:332
 #: src/Controllers/Table/DropColumnController.php:61
 #: src/Controllers/Table/ReplaceController.php:287 src/Core.php:516
 msgid "No change"
@@ -5554,7 +5554,7 @@ msgstr "سانلىق مەلۇماتلارنى ئوقۇشقا يول قويىدۇ
 #: resources/templates/server/privileges/privileges_table.twig:60
 #: resources/templates/server/privileges/privileges_table.twig:87
 #: resources/templates/server/privileges/privileges_table.twig:114
-#: resources/templates/table/search/index.twig:128 src/InsertEdit.php:465
+#: resources/templates/table/search/index.twig:128 src/InsertEdit.php:433
 msgid "Or"
 msgstr "ياكى"
 
@@ -7181,7 +7181,7 @@ msgstr "ئاساسىي مەزمۇن"
 #: src/Controllers/Table/Partition/RebuildController.php:48
 #: src/Controllers/Table/Partition/RepairController.php:47
 #: src/Controllers/Table/Partition/TruncateController.php:48
-#: src/Controllers/Table/RelationController.php:140
+#: src/Controllers/Table/RelationController.php:141
 #: src/Database/Routines.php:1023 src/Display/Results.php:3013
 #: src/Message.php:122
 #, fuzzy
@@ -7556,7 +7556,7 @@ msgstr "قايتا تەرتىپكە سېلىش"
 #: resources/templates/table/index_form.twig:203
 #: src/Controllers/JavaScriptMessagesController.php:463
 #: src/Controllers/JavaScriptMessagesController.php:615
-#: src/Error/ErrorHandler.php:426 src/InsertEdit.php:1465
+#: src/Error/ErrorHandler.php:426 src/InsertEdit.php:1440
 msgid "Ignore"
 msgstr "پەرۋا قىلماڭ"
 
@@ -7622,7 +7622,7 @@ msgstr "ئۇزۇنلۇقى بولغاچقا ، <br> بۇ ئىستوننى تەھ
 msgid "Binary - do not edit"
 msgstr "ئىككىلىك - تەھرىرلىمەڭ"
 
-#: resources/templates/table/insert/column_row.twig:120
+#: resources/templates/table/insert/column_row.twig:123
 #: resources/templates/table/search/input_box.twig:32
 #, fuzzy
 #| msgid "Insert"
@@ -12862,7 +12862,7 @@ msgstr "PBMS ئۇلىنالمىدى:"
 msgid "Missing data for %s"
 msgstr "% S ئۈچۈن سانلىق مەلۇمات كەم"
 
-#: src/Config/FormDisplay.php:619 src/Config/Validator.php:595
+#: src/Config/FormDisplay.php:619 src/Config/Validator.php:593
 #: src/Controllers/JavaScriptMessagesController.php:802
 msgid "Incorrect value!"
 msgstr "خاتا قىممەت!"
@@ -13106,11 +13106,11 @@ msgstr ""
 msgid "Server %d"
 msgstr "مۇلازىمىتېر"
 
-#: src/ConfigStorage/Relation.php:1250
+#: src/ConfigStorage/Relation.php:1116
 msgid "no description"
 msgstr "چۈشەندۈرۈش يوق"
 
-#: src/ConfigStorage/Relation.php:1456
+#: src/ConfigStorage/Relation.php:1322
 #, fuzzy, php-format
 msgid ""
 "You do not have necessary privileges to create a database named '%s'. You "
@@ -13145,23 +13145,23 @@ msgstr "ساندان"
 msgid "Table-level tabs"
 msgstr "جەدۋەل ئىزاھى"
 
-#: src/Config/Validator.php:253
+#: src/Config/Validator.php:251
 msgid "Could not connect to the database server!"
 msgstr "ساندان مۇلازىمېتىرىغا ئۇلىنالمىدى!"
 
-#: src/Config/Validator.php:289
+#: src/Config/Validator.php:287
 #, fuzzy
 #| msgid "Authenticating…"
 msgid "Invalid authentication type!"
 msgstr "تەكشۈرۈشتىن ئۆزكۈزىۋاتىدۇ…"
 
-#: src/Config/Validator.php:294
+#: src/Config/Validator.php:292
 #, fuzzy
 #| msgid "Authenticating…"
 msgid "Empty username while using [kbd]config[/kbd] authentication method!"
 msgstr "تەكشۈرۈشتىن ئۆزكۈزىۋاتىدۇ…"
 
-#: src/Config/Validator.php:300
+#: src/Config/Validator.php:298
 #, fuzzy
 #| msgid "Authenticating…"
 msgid ""
@@ -13169,19 +13169,19 @@ msgid ""
 "method!"
 msgstr "تەكشۈرۈشتىن ئۆزكۈزىۋاتىدۇ…"
 
-#: src/Config/Validator.php:307
+#: src/Config/Validator.php:305
 #, fuzzy
 #| msgid "Authenticating…"
 msgid "Empty signon URL while using [kbd]signon[/kbd] authentication method!"
 msgstr "تەكشۈرۈشتىن ئۆزكۈزىۋاتىدۇ…"
 
-#: src/Config/Validator.php:360
+#: src/Config/Validator.php:358
 msgid ""
 "Empty phpMyAdmin control user while using phpMyAdmin configuration storage!"
 msgstr ""
 "PhpMyAdmin سەپلىمە ساقلىغۇچنى ئىشلەتكەندە كونترول ئىشلەتكۈچىنى بوش قىلىڭ!"
 
-#: src/Config/Validator.php:367
+#: src/Config/Validator.php:365
 msgid ""
 "Empty phpMyAdmin control user password while using phpMyAdmin configuration "
 "storage!"
@@ -13189,45 +13189,45 @@ msgstr ""
 "PhpMyAdmin سەپلىمە ساقلىغۇچنى ئىشلەتكەندە ئىشلەتكۈچىنىڭ مەخپىي نومۇرىنى "
 "كونترول قىلىڭ!"
 
-#: src/Config/Validator.php:456
+#: src/Config/Validator.php:454
 msgid "Incorrect value:"
 msgstr "خاتا قىممەت:"
 
-#: src/Config/Validator.php:467
+#: src/Config/Validator.php:465
 #, fuzzy, php-format
 msgid "Incorrect IP address: %s"
 msgstr "IP ئادرېسى خاتا:% s"
 
-#: src/Config/Validator.php:530
+#: src/Config/Validator.php:528
 #: src/Controllers/JavaScriptMessagesController.php:801
 #, fuzzy
 #| msgid "%d is not valid row number."
 msgid "Not a valid port number!"
 msgstr "%dئۈنۈملۈك قۇر سانى ئەمەس."
 
-#: src/Config/Validator.php:552
+#: src/Config/Validator.php:550
 #: src/Controllers/JavaScriptMessagesController.php:799
 msgid "Not a positive number!"
 msgstr "ئىجابىي سان ئەمەس!"
 
-#: src/Config/Validator.php:574
+#: src/Config/Validator.php:572
 #: src/Controllers/JavaScriptMessagesController.php:800
 msgid "Not a non-negative number!"
 msgstr "مەنپىي بولمىغان سان ئەمەس!"
 
-#: src/Config/Validator.php:613
+#: src/Config/Validator.php:611
 #: src/Controllers/JavaScriptMessagesController.php:803
 #, fuzzy, php-format
 msgid "Value must be less than or equal to %s!"
 msgstr "قىممىتى چوقۇم% s دىن تۆۋەن ياكى تەڭ بولۇشى كېرەك!"
 
-#: src/Console.php:61
+#: src/Console/Console.php:64
 #, php-format
 msgid "Showing %1$d bookmark (both private and shared)"
 msgid_plural "Showing %1$d bookmarks (both private and shared)"
 msgstr[0] ""
 
-#: src/Console.php:68
+#: src/Console/Console.php:71
 #, fuzzy
 #| msgid "Search"
 msgid "No bookmarks"
@@ -13336,8 +13336,8 @@ msgstr "«% S» دەپ ئاتىلىدىغان بىر بەت بار ، ئۇنى �
 #: src/Controllers/Table/SearchController.php:177
 #: src/Controllers/Table/SqlController.php:57
 #: src/Controllers/Table/SqlController.php:62
-#: src/Controllers/Table/StructureController.php:90
-#: src/Controllers/Table/StructureController.php:95
+#: src/Controllers/Table/StructureController.php:91
+#: src/Controllers/Table/StructureController.php:96
 #: src/Controllers/Table/Structure/PrimaryController.php:67
 #: src/Controllers/Table/Structure/PrimaryController.php:72
 #: src/Controllers/Table/TrackingController.php:66
@@ -13458,8 +13458,8 @@ msgstr "ئىشلەتكۈچىلەرنى باشقۇرۇش ھوقۇقىڭىز يو�
 #: src/Controllers/Table/SearchController.php:191
 #: src/Controllers/Table/SqlController.php:71
 #: src/Controllers/Table/SqlController.php:76
-#: src/Controllers/Table/StructureController.php:104
-#: src/Controllers/Table/StructureController.php:109
+#: src/Controllers/Table/StructureController.php:105
+#: src/Controllers/Table/StructureController.php:110
 #: src/Controllers/Table/Structure/PrimaryController.php:81
 #: src/Controllers/Table/Structure/PrimaryController.php:86
 #: src/Controllers/Table/ZoomSearchController.php:114
@@ -15990,7 +15990,7 @@ msgid "String"
 msgstr "قۇر ئالماشۇرۇش بەلگىسى"
 
 #: src/Controllers/Operations/Database/CollationController.php:40
-#: src/Controllers/Operations/TableController.php:270
+#: src/Controllers/Operations/TableController.php:265
 msgid "No collation provided."
 msgstr "ھېچقانداق يىغىش تەمىنلەنمىگەن."
 
@@ -16052,7 +16052,7 @@ msgstr "تەڭشەك ھۆجىتى ئىچىدىكى دەلىللەش ئۇسۇلى
 
 #: src/Controllers/SchemaExportController.php:38
 #: src/Controllers/Server/UserGroupsFormController.php:44
-#: src/ResponseRenderer.php:447
+#: src/ResponseRenderer.php:448
 #, fuzzy
 #| msgid "Routines"
 msgid "Missing parameter:"
@@ -16988,11 +16988,11 @@ msgstr "ساندان ئىسمىنى بوش قويماڭ!"
 msgid "Invalid database or table name."
 msgstr "ئۈنۈمسىز جەدۋەل ئىسمى"
 
-#: src/Controllers/Table/RelationController.php:317
+#: src/Controllers/Table/RelationController.php:314
 msgid "Display column was successfully updated."
 msgstr "كۆرسىتىش ئىستونى مۇۋەپپەقىيەتلىك يېڭىلاندى."
 
-#: src/Controllers/Table/RelationController.php:351
+#: src/Controllers/Table/RelationController.php:348
 #, fuzzy
 #| msgid "Internal relation added"
 msgid "Internal relationships were successfully updated."
@@ -18135,17 +18135,17 @@ msgstr ""
 "% 1 $ s ۋە% 2 $ s كۆرسەتكۈچلىرى باراۋەر بولۇپ ، ئۇلارنىڭ بىرىنى ئۆچۈرۈۋېتىشى "
 "مۇمكىن."
 
-#: src/InsertEdit.php:466
+#: src/InsertEdit.php:434
 #, fuzzy
 #| msgid "web server upload directory"
 msgid "web server upload directory:"
 msgstr "مۇلازىمىتېردىكى يۈكلەش مۇندەرىجىسى"
 
-#: src/InsertEdit.php:883 src/Sql.php:861
+#: src/InsertEdit.php:858 src/Sql.php:861
 msgid "Showing SQL query"
 msgstr "SQL سوئالنى كۆرسىتىش"
 
-#: src/InsertEdit.php:907 src/Sql.php:841
+#: src/InsertEdit.php:882 src/Sql.php:841
 #, fuzzy, php-format
 msgid "Inserted row id: %1$d"
 msgstr "قىستۇرما قۇر id:% 1 $ d"
@@ -20247,7 +20247,7 @@ msgstr ""
 "بېرىلغان ئۆزگەرتىشلەر داۋاملاشمايدۇ. جەدۋەل قۇرۇلمىسىنىڭ ئۆزگەرتىلگەن-"
 "ئۆزگەرمىگەنلىكىنى تەكشۈرۈپ بېقىڭ."
 
-#: src/Table/Table.php:1572
+#: src/Table/Table.php:1576
 #, fuzzy, php-format
 msgid "Error creating foreign key on %1$s (check data types)"
 msgstr ""
